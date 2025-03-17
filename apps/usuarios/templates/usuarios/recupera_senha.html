@@ -1,0 +1,31 @@
+{% extends "base/auth/base_auth.html" %}
+
+{% block title %}Esqueceu a Senha{% endblock %}
+
+{% block form_fields %}
+  <form method="POST">
+    {% csrf_token %}
+
+    <div class="mb-3">
+      <label for="{{ form.email.id_for_label }}" class="form-label fw-bold">Digite seu email</label>
+      {{ form.email }}
+      <small class="text-danger">{{ form.email.errors }}</small>
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100 fs-4 mb-4 rounded-2">
+      Solicitar Redefinição
+    </button>
+  </form>
+  
+  <div class="d-flex align-items-center justify-content-center">
+    <p class="fs-4 mb-0 fw-bold">Lembrou da sua senha?</p>
+    <a class="text-primary fw-bold ms-2" href="{% url 'usuarios:login' %}">Entrar</a>
+  </div>
+{% endblock %}
+
+{% block button_text %}Solicitar Redefinição{% endblock %}
+
+{% block footer_link %}
+  <p class="fs-4 mb-0 fw-bold">Ainda não tem uma conta?</p>
+  <a class="text-primary fw-bold ms-2" href="#">Criar uma conta</a>
+{% endblock %}
