@@ -1,9 +1,21 @@
+// ----------------------------------------------
+// Header Style
+// ----------------------------------------------
+
 .app-header {
   position: relative;
   z-index: 50;
   width: 100%;
-  background: $gray-200;
-  
+  background: $body-bg;
+  padding: 0 25px;
+  top: 0;
+
+  .container-fluid {
+    max-width: $boxed-width;
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+
   .navbar {
     min-height: $header-height;
     padding: 0;
@@ -16,8 +28,10 @@
           height: $header-height;
           display: flex;
           align-items: center;
-          font-size: 20px;
           position: relative;
+
+          font-size: 20px;
+          z-index: 2;
         }
       }
     }
@@ -27,13 +41,28 @@
 .navbar-nav .dropdown-menu {
   position: absolute;
   min-width: 200px;
+
+  .dropdown-item {
+    border-radius: 8px;
+  }
+
+}
+
+.notification {
+  content: "";
+  position: absolute;
+  top: 22px;
+  right: 9px;
+  width: 8px;
+  height: 8px;
 }
 
 @include media-breakpoint-down(lg) {
-  .app-header{
-    .navbar{
+  .app-header {
+    .navbar {
       flex-wrap: nowrap;
-      .navbar-nav{
+
+      .navbar-nav {
         flex-direction: row;
       }
     }
@@ -51,10 +80,8 @@
   }
 }
 
-.notification {
-  position: absolute;
-  top: 22px;
-  right: 9px;
-  width: 8px;
-  height: 8px;
+@include media-breakpoint-down(lg) {
+  .w-xs-100 {
+    width: 100% !important;
+  }
 }

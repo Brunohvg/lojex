@@ -1,30 +1,73 @@
-// ===================================
-// Sidebar
-// ===================================
+// ----------------------------------------------
+// SideBar Style
+// ----------------------------------------------
 
 .left-sidebar {
   width: $sidebar-width-full;
   background-color: $white;
   position: absolute;
-  transition: 0.2s ease-in;
-  box-shadow: 10px 0 10px rgba(0, 0, 0, 0.02);
+  transition: .2s ease-in;
+  box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.03);
   height: 100%;
   z-index: 11;
+
   .scroll-sidebar {
-    padding: 20px;
     overflow-y: auto;
-    height: calc(100% - 20px);
+    padding: 0 16px;
+    height: calc(100vh - 80px);
+    border-radius: $border-radius;
+
     .simplebar-track.simplebar-horizontal {
       visibility: hidden !important;
     }
   }
 }
 
+.brand-logo {
+  min-height: $header-height;
+  padding: 12px 16px;
+}
+
+.sidebar-divider {
+  height: 1px;
+  width: calc(100% - 18px);
+  display: block;
+  margin: 13px 0;
+  margin-left: 9px;
+  background-image: linear-gradient(90deg,
+      transparent,
+      transparent 50%,
+      var(--bs-white) 50%,
+      var(--bs-white) 100%),
+    linear-gradient(90deg,
+      var(--bs-border-color),
+      var(--bs-border-color),
+      var(--bs-border-color),
+      var(--bs-border-color),
+      var(--bs-border-color));
+  background-size: 7px 3px, 100% 3px;
+
+  &.lg {
+    width: calc(100% - 32px);
+    margin-left: 16px;
+  }
+}
+
+.unlimited-access {
+  .unlimited-access-img {
+    margin: 0 -30px 0 0;
+  }
+}
+
 .nav-small-cap {
-  padding: 15px 0;
-  margin-top: 15px;
-  color: $sidebar-text;
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 7px 0;
+  line-height: 26px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--bs-heading-color);
+
   .nav-small-cap-icon {
     display: none;
   }
@@ -32,99 +75,45 @@
 
 .sidebar-nav {
   ul {
-    >.sidebar-item {
-      border-bottom: 1px solid $border-color;
-    }
-    .sidebar-item {      
+    .sidebar-item {
       .sidebar-link {
-        color: $sidebar-text;
         display: flex;
+        font-size: 15px;
         white-space: nowrap;
         align-items: center;
         line-height: 25px;
         position: relative;
-        margin: 12px 0;
-        .aside-icon{
-          width: 40px;
-          height: 40px;
+        padding: 9px 16px;
+        border-radius: 30px;
+        gap: 15px;
+        text-decoration: none;
+        font-weight: $font-weight-normal;
+        margin-bottom: 4px;
+
+        span:first-child {
           display: flex;
-          align-items: center;
-          justify-content: center;
+        }
+
+        iconify-icon {
+          font-size: 18px;
+        }
+
+        &:hover {
+          color: var(--bs-primary);
+
+          &.has-arrow::after {
+            border-color: var(--bs-primary);
+          }
         }
       }
+
+      &.selected>.sidebar-link.active,
+      &.selected>.sidebar-link,
+      >.sidebar-link.active {
+        background-color: var(--bs-primary-bg-subtle);
+        color: var(--bs-primary);
+      }
+
     }
   }
-
-  .sidebar-list {
-    .sidebar-list-item {
-      padding: 8px 0;
-    }
-  }
-}
-
-.collapse.in {
-  display: block;
-}
-
-// ===================================
-// Color Activing and Hover
-// ===================================
-.warning-hover-bg,
-.danger-hover-bg,
-.success-hover-bg,
-.primary-hover-bg,
-.indigo-hover-bg {
-  position: relative;
-
-  &::before {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    content: "";
-    width: 30px;
-    height: 100%;
-    z-index: -1;
-    border-radius: 10px;
-    transition: all 0.4s ease-in-out;
-  }
-
-  &:hover,
-  &.btn-toggle[aria-expanded="true"] {
-    &::before {
-      width: 100%;
-    }
-  }
-}
-
-.selected {
-  .warning-hover-bg,
-  .danger-hover-bg,
-  .success-hover-bg,
-  .primary-hover-bg,
-  .indigo-hover-bg {
-    &::before {
-      width: 100%;
-    }
-  }
-}
-
-.danger-hover-bg::before {
-  background-color: $light-danger;
-}
-
-.warning-hover-bg::before {
-  background-color: $light-warning;
-}
-
-.success-hover-bg::before {
-  background-color: $light-success;
-}
-
-.primary-hover-bg::before {
-  background-color: $light-primary;
-}
-
-.indigo-hover-bg::before {
-  background-color: $light-indigo;
 }

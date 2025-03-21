@@ -1,0 +1,21 @@
+{% extends "base/auth/base_auth_nova.html" %}
+
+{% block title %}
+  {% if request.resolver_match.url_name == "login" %}
+    Login
+  {% elif request.resolver_match.url_name == "recupera_senha" %}
+    Recuperar Senha
+  {% else %}
+    Registrar
+  {% endif %}
+{% endblock %}
+
+{% block form_fields %}
+  {% if request.resolver_match.url_name == "login" %}
+    {% include 'usuarios/includes/login_usuario.html' %}
+  {% elif request.resolver_match.url_name == "recuperar_senha" %}
+    {% include 'usuarios/includes/recupera_senha.html' %}
+  {% else %}
+    {% include 'usuarios/includes/registrar_usuario.html' %}
+  {% endif %}
+{% endblock %}

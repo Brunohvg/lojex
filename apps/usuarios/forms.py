@@ -1,9 +1,5 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
-from .models import Usuario 
-
-from django import forms
-from django.contrib.auth.forms import UserCreationForm
 from .models import Usuario
 
 class RegistroUsuarioForm(UserCreationForm):
@@ -75,7 +71,6 @@ class LoginForm(forms.Form):
         })
     )
     
-    # Exibindo mensagens de erro para feedback
     def clean_email(self):
         email = self.cleaned_data.get('email')
         if not email:
@@ -88,13 +83,23 @@ class LoginForm(forms.Form):
             raise forms.ValidationError("Este campo é obrigatório")
         return senha
 
-
 class EsqueciSenhaForm(forms.Form):
     email = forms.EmailField(
         label="Email",
         widget=forms.EmailInput(attrs={
             "class": "form-control",
             "placeholder": "Digite seu email",
-            "id": "email"
-        })
+            "id": "email",
+            
+        }),
+        error_messages={
+            'required': 'Este campo é obrigatório.',
+            'invalid': 'Digite um email válido.'
+        }
     )
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if not email:
+            raise forms.ValidationError("Este campo é obrigatório")
+        return email

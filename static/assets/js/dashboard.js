@@ -2,62 +2,151 @@ $(function () {
 
 
   // =====================================
-  // Profit
+  // Sales Profit Start
   // =====================================
-  var profit = {
+
+  var options = {
     series: [
       {
-        name: "Profit",
-        data: [18, 7, 15, 29, 18, 18, 7, 15, 29, 18, 12, 9],
+        type: "area",
+        name: "This Year",
+        chart: {
+          foreColor: "#111c2d99",
+          fontSize: 12,
+          fontWeight: 500,
+          dropShadow: {
+            enabled: true,
+            enabledOnSeries: undefined,
+            top: 5,
+            left: 0,
+            blur: 3,
+            color: "#000",
+            opacity: 0.1,
+          },
+        },
+        data: [
+          {
+            x: "Aug",
+            y: 25,
+          },
+          {
+            x: "Sep",
+            y: 25,
+          },
+          {
+            x: "Oct",
+            y: 10,
+          },
+          {
+            x: "Nov",
+            y: 10,
+          },
+          {
+            x: "Dec",
+            y: 45,
+          },
+          {
+            x: "Jan",
+            y: 45,
+          },
+          {
+            x: "Feb",
+            y: 75,
+          },
+          {
+            x: "Mar",
+            y: 70,
+          },
+          {
+            x: "Apr",
+            y: 35,
+          },
+        ],
       },
       {
-        name: "Expenses",
-        data: [-13, -18, -9, -14, -15, -13, -18, -9, -14, -5, -17, -15],
+        type: "line",
+        name: "Last Year",
+        chart: {
+          foreColor: "#111c2d99",
+        },
+        data: [
+          {
+            x: "Aug",
+            y: 50,
+          },
+          {
+            x: "Sep",
+            y: 50,
+          },
+          {
+            x: "Oct",
+            y: 25,
+          },
+          {
+            x: "Nov",
+            y: 20,
+          },
+          {
+            x: "Dec",
+            y: 20,
+          },
+          {
+            x: "Jan",
+            y: 20,
+          },
+          {
+            x: "Feb",
+            y: 35,
+          },
+          {
+            x: "Mar",
+            y: 35,
+          },
+          {
+            x: "Apr",
+            y: 60,
+          },
+        ],
       },
     ],
-    colors: ["var(--bs-primary)", "#fb977d"],
     chart: {
-      type: "bar",
-      fontFamily: "Plus Jakarta Sans', sans-serif",
+      height: 300,
+      fontFamily: "inherit",
       foreColor: "#adb0bb",
-      width: "100%",
-      height: 350,
-      stacked: true,
+      fontSize: "12px",
+      offsetX: -15,
+      offsetY: 10,
+      animations: {
+        speed: 500,
+      },
       toolbar: {
-        show: !1,
+        show: false,
       },
     },
-  
-    plotOptions: {
-      bar: {
-        horizontal: false,
-        columnWidth: "35%",
-        borderRadius: [6],
-        borderRadiusApplication: 'end',
-        borderRadiusWhenStacked: 'all'
-      },
-    },
+    colors: ["var(--bs-primary)", "var(--bs-secondary-color)"],
     dataLabels: {
       enabled: false,
     },
+    fill: {
+      type: "gradient",
+      gradient: {
+        shadeIntensity: 0,
+        inverseColors: false,
+        opacityFrom: 0.1,
+        opacityTo: 0,
+        stops: [100],
+      },
+    },
+    grid: {
+      show: true,
+      strokeDashArray: 3,
+      borderColor: "#90A4AE50",
+    },
     stroke: {
       curve: "smooth",
-      width: 6,
-      colors: ["transparent"],
-    },
-  
-    grid: {
-      borderColor: "transparent",
-      padding: { top: 0, bottom: -8, left: 20, right: 20 },
-    },
-    tooltip: {
-      theme: "dark",
-    },
-    toolbar: {
-      show: false,
+      width: 2,
     },
     xaxis: {
-      categories: ["Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
       axisBorder: {
         show: false,
       },
@@ -65,106 +154,134 @@ $(function () {
         show: false,
       },
     },
+    yaxis: {
+      tickAmount: 3,
+    },
     legend: {
       show: false,
     },
-    fill: {
-      opacity: 1,
+    tooltip: {
+      theme: "dark",
     },
   };
-  
-  var chart = new ApexCharts(document.querySelector("#profit"), profit);
+  document.getElementById("sales-profit").innerHTML = "";
+  var chart = new ApexCharts(document.querySelector("#sales-profit"), options);
   chart.render();
 
 
   // =====================================
-  // Breakup
+  // total-followers chart
   // =====================================
-  var grade = {
-    series: [5368, 3500, 4106],
-    labels: ["5368", "Refferal Traffic", "Oragnic Traffic"],
+
+  var totalfollowers = {
+    series: [
+      {
+        name: "",
+        data: [29, 52, 38, 47, 56],
+      },
+      {
+        name: "",
+        data: [71, 71, 71, 71, 71],
+      },
+    ],
     chart: {
-      height: 170,
-      type: "donut",
-      fontFamily: "Plus Jakarta Sans', sans-serif",
-      foreColor: "#c6d1e9",
+      fontFamily: "inherit",
+      type: "bar",
+      height: 90,
+      stacked: true,
+      toolbar: {
+        show: false,
+      },
+      sparkline: {
+        enabled: true,
+      },
     },
-  
-    tooltip: {
-      theme: "dark",
-      fillSeriesColor: false,
+    grid: {
+      show: false,
+      borderColor: "rgba(0,0,0,0.1)",
+      strokeDashArray: 1,
+      xaxis: {
+        lines: {
+          show: false,
+        },
+      },
+      yaxis: {
+        lines: {
+          show: true,
+        },
+      },
+      padding: {
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+      },
     },
-  
-    colors: ["#e7ecf0", "#fb977d", "var(--bs-primary)"],
+    colors: [
+      "var(--bs-danger)",
+      "var(--black-black-10, rgba(17, 28, 45, 0.10))",
+    ],
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        columnWidth: "30%",
+        borderRadius: [3],
+        borderRadiusApplication: "end",
+        borderRadiusWhenStacked: "all",
+      },
+    },
     dataLabels: {
       enabled: false,
     },
-  
+    xaxis: {
+      labels: {
+        show: false,
+      },
+      axisBorder: {
+        show: false,
+      },
+      axisTicks: {
+        show: false,
+      },
+    },
+    yaxis: {
+      labels: {
+        show: false,
+      },
+    },
+    tooltip: {
+      theme: "dark",
+    },
     legend: {
       show: false,
     },
-  
-    stroke: {
-      show: false,
-    },
-    responsive: [
-      {
-        breakpoint: 991,
-        options: {
-          chart: {
-            width: 150,
-          },
-        },
-      },
-    ],
-    plotOptions: {
-      pie: {
-        donut: {
-          size: '80%',
-          background: "none",
-          labels: {
-            show: true,
-            name: {
-              show: true,
-              fontSize: "12px",
-              color: undefined,
-              offsetY: 5,
-            },
-            value: {
-              show: false,
-              color: "#98aab4",
-            },
-          },
-        },
-      },
-    },
   };
-  
-  var chart = new ApexCharts(document.querySelector("#grade"), grade);
-  chart.render();
-  
 
-
+  var chart_column_stacked = new ApexCharts(
+    document.querySelector("#total-followers"),
+    totalfollowers
+  );
+  chart_column_stacked.render();
 
   // =====================================
-  // Earning
+  // total-income
   // =====================================
-  var earning = {
+  var options = {
     chart: {
-      id: "sparkline3",
+      id: "total-income",
       type: "area",
-      height: 60,
+      height: 70,
       sparkline: {
         enabled: true,
       },
       group: "sparklines",
-      fontFamily: "Plus Jakarta Sans', sans-serif",
+      fontFamily: "inherit",
       foreColor: "#adb0bb",
     },
     series: [
       {
-        name: "Earnings",
-        color: "#8763da",
+        name: "monthly earnings",
+        color: "var(--bs-secondary)",
         data: [25, 66, 20, 40, 12, 58, 20],
       },
     ],
@@ -173,9 +290,14 @@ $(function () {
       width: 2,
     },
     fill: {
-      colors: ["#f3feff"],
-      type: "solid",
-      opacity: 0.05,
+      type: "gradient",
+      gradient: {
+        shadeIntensity: 0,
+        inverseColors: false,
+        opacityFrom: 0,
+        opacityTo: 0,
+        stops: [20, 180],
+      },
     },
 
     markers: {
@@ -192,5 +314,7 @@ $(function () {
       },
     },
   };
-  new ApexCharts(document.querySelector("#earning"), earning).render();
+  new ApexCharts(document.querySelector("#total-income"), options).render();
+
+
 })

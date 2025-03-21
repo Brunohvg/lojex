@@ -176,8 +176,5 @@
     "peerDependencies": {
       "@popperjs/core": "^2.11.5"
     }
-  },
-  "dependencies": {
-    "bootstrap": "^5.3.0"
   }
 }
