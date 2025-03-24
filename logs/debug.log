@@ -48,3 +48,773 @@ Traceback (most recent call last):
     raise NoReverseMatch(msg)
 django.urls.exceptions.NoReverseMatch: Reverse for 'pagina_inicial' not found. 'pagina_inicial' is not a valid view function or pattern name.
 [2025-03-22 09:42:32] [ERROR] [django.server] "POST /login/ HTTP/1.1" 500 91978
+[2025-03-22 09:48:38] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-22 09:48:40] [INFO] [django.server] "GET /registrar/ HTTP/1.1" 200 3371
+[2025-03-22 09:48:40] [INFO] [django.server] "GET /registrar/ HTTP/1.1" 200 3371
+[2025-03-22 09:48:40] [INFO] [django.server] "GET /static/assets/libs/jquery/dist/jquery.min.js HTTP/1.1" 200 88151
+[2025-03-22 09:50:14] [WARNING] [usuarios] Falha ao registrar usuário. Dados inválidos.
+[2025-03-22 09:50:14] [INFO] [django.server] "POST /registrar/ HTTP/1.1" 200 3512
+[2025-03-22 09:50:31] [INFO] [usuarios] Novo usuário registrado: brunohenrique27.19+teste@gmail.com
+[2025-03-22 09:50:31] [INFO] [django.server] "POST /registrar/ HTTP/1.1" 302 0
+[2025-03-22 09:50:31] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-22 09:50:40] [INFO] [django.server] "GET /recuperar-senha/ HTTP/1.1" 200 2198
+[2025-03-22 09:50:41] [ERROR] [django.request] Internal Server Error: /recuperar-senha/
+Traceback (most recent call last):
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vidal/Programas/lojex/apps/usuarios/views.py", line 92, in recupera_senha
+    send_mail(
+    ~~~~~~~~~^
+        'Redefinição de Senha',
+        ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        fail_silently=False,
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/core/mail/__init__.py", line 88, in send_mail
+    return mail.send()
+           ~~~~~~~~~^^
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/core/mail/message.py", line 301, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/core/mail/backends/smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/core/mail/backends/smtp.py", line 86, in open
+    self.connection = self.connection_class(
+                      ~~~~~~~~~~~~~~~~~~~~~^
+        self.host, self.port, **connection_params
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/vidal/.local/share/uv/python/cpython-3.13.2-linux-x86_64-gnu/lib/python3.13/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/vidal/.local/share/uv/python/cpython-3.13.2-linux-x86_64-gnu/lib/python3.13/smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vidal/.local/share/uv/python/cpython-3.13.2-linux-x86_64-gnu/lib/python3.13/smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+                                    self.source_address)
+                                    ^^^^^^^^^^^^^^^^^^^^
+  File "/home/vidal/.local/share/uv/python/cpython-3.13.2-linux-x86_64-gnu/lib/python3.13/socket.py", line 840, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+               ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vidal/.local/share/uv/python/cpython-3.13.2-linux-x86_64-gnu/lib/python3.13/socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -2] Name or service not known
+[2025-03-22 09:50:41] [ERROR] [django.server] "POST /recuperar-senha/ HTTP/1.1" 500 114248
+[2025-03-22 09:53:05] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/settings.py changed, reloading.
+[2025-03-22 09:53:05] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-22 09:53:13] [ERROR] [django.request] Internal Server Error: /recuperar-senha/
+Traceback (most recent call last):
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vidal/Programas/lojex/apps/usuarios/views.py", line 92, in recupera_senha
+    send_mail(
+    ~~~~~~~~~^
+        'Redefinição de Senha',
+        ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        fail_silently=False,
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/core/mail/__init__.py", line 88, in send_mail
+    return mail.send()
+           ~~~~~~~~~^^
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/core/mail/message.py", line 301, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/core/mail/backends/smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/core/mail/backends/smtp.py", line 86, in open
+    self.connection = self.connection_class(
+                      ~~~~~~~~~~~~~~~~~~~~~^
+        self.host, self.port, **connection_params
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/vidal/.local/share/uv/python/cpython-3.13.2-linux-x86_64-gnu/lib/python3.13/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/vidal/.local/share/uv/python/cpython-3.13.2-linux-x86_64-gnu/lib/python3.13/smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vidal/.local/share/uv/python/cpython-3.13.2-linux-x86_64-gnu/lib/python3.13/smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+                                    self.source_address)
+                                    ^^^^^^^^^^^^^^^^^^^^
+  File "/home/vidal/.local/share/uv/python/cpython-3.13.2-linux-x86_64-gnu/lib/python3.13/socket.py", line 840, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+               ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vidal/.local/share/uv/python/cpython-3.13.2-linux-x86_64-gnu/lib/python3.13/socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -2] Name or service not known
+[2025-03-22 09:53:13] [ERROR] [django.server] "POST /recuperar-senha/ HTTP/1.1" 500 114248
+[2025-03-22 10:35:19] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/settings.py changed, reloading.
+[2025-03-22 10:35:20] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-22 11:54:52] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-22 11:54:58] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-22 11:54:58] [INFO] [django.server] "GET /static/assets/css/styles.min.css HTTP/1.1" 304 0
+[2025-03-22 11:55:00] [INFO] [django.server] "GET /recuperar-senha/ HTTP/1.1" 200 2198
+[2025-03-22 11:55:07] [INFO] [usuarios] E-mail de recuperação de senha enviado para brunohenrique27.19@gmail.com.
+[2025-03-22 11:55:07] [INFO] [django.server] "POST /recuperar-senha/ HTTP/1.1" 302 0
+[2025-03-22 11:55:07] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-22 11:56:32] [WARNING] [django.request] Not Found: /resetar-senha/1/cn2efr-5d1620419409932d752341b7e9f2d7b7/
+[2025-03-22 11:56:32] [WARNING] [django.server] "GET /resetar-senha/1/cn2efr-5d1620419409932d752341b7e9f2d7b7/ HTTP/1.1" 404 4487
+[2025-03-22 11:57:20] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/settings.py changed, reloading.
+[2025-03-22 11:59:09] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-22 11:59:11] [INFO] [django.server] "GET /recuperar-senha/ HTTP/1.1" 200 2198
+[2025-03-22 11:59:15] [ERROR] [django.request] Internal Server Error: /recuperar-senha/
+Traceback (most recent call last):
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vidal/Programas/lojex/apps/usuarios/views.py", line 92, in recupera_senha
+    send_mail(
+    ~~~~~~~~~^
+        'Redefinição de Senha',
+        ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        fail_silently=False,
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/core/mail/__init__.py", line 88, in send_mail
+    return mail.send()
+           ~~~~~~~~~^^
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/core/mail/message.py", line 301, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/core/mail/backends/smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/core/mail/backends/smtp.py", line 95, in open
+    self.connection.login(self.username, self.password)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vidal/.local/share/uv/python/cpython-3.13.2-linux-x86_64-gnu/lib/python3.13/smtplib.py", line 750, in login
+    raise last_exception
+  File "/home/vidal/.local/share/uv/python/cpython-3.13.2-linux-x86_64-gnu/lib/python3.13/smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+                   ~~~~~~~~~^
+        authmethod, getattr(self, method_name),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        initial_response_ok=initial_response_ok)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vidal/.local/share/uv/python/cpython-3.13.2-linux-x86_64-gnu/lib/python3.13/smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-301bf61a68dsm8296527a91.39 - gsmtp')
+[2025-03-22 11:59:15] [ERROR] [django.server] "POST /recuperar-senha/ HTTP/1.1" 500 109114
+[2025-03-22 11:59:53] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/settings.py changed, reloading.
+[2025-03-22 11:59:54] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-22 12:00:17] [WARNING] [django.request] Not Found: /resetar-senha/1/cn2efr-5d1620419409932d752341b7e9f2d7b7/
+[2025-03-22 12:00:17] [WARNING] [django.server] "GET /resetar-senha/1/cn2efr-5d1620419409932d752341b7e9f2d7b7/ HTTP/1.1" 404 4487
+[2025-03-22 12:00:22] [ERROR] [django.request] Internal Server Error: /recuperar-senha/
+Traceback (most recent call last):
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vidal/Programas/lojex/apps/usuarios/views.py", line 92, in recupera_senha
+    send_mail(
+    ~~~~~~~~~^
+        'Redefinição de Senha',
+        ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        fail_silently=False,
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/core/mail/__init__.py", line 88, in send_mail
+    return mail.send()
+           ~~~~~~~~~^^
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/core/mail/message.py", line 301, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/core/mail/backends/smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/core/mail/backends/smtp.py", line 95, in open
+    self.connection.login(self.username, self.password)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vidal/.local/share/uv/python/cpython-3.13.2-linux-x86_64-gnu/lib/python3.13/smtplib.py", line 750, in login
+    raise last_exception
+  File "/home/vidal/.local/share/uv/python/cpython-3.13.2-linux-x86_64-gnu/lib/python3.13/smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+                   ~~~~~~~~~^
+        authmethod, getattr(self, method_name),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        initial_response_ok=initial_response_ok)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vidal/.local/share/uv/python/cpython-3.13.2-linux-x86_64-gnu/lib/python3.13/smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-73906158edcsm4266855b3a.149 - gsmtp')
+[2025-03-22 12:00:22] [ERROR] [django.server] "POST /recuperar-senha/ HTTP/1.1" 500 109121
+[2025-03-22 12:00:27] [ERROR] [django.request] Internal Server Error: /recuperar-senha/
+Traceback (most recent call last):
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vidal/Programas/lojex/apps/usuarios/views.py", line 92, in recupera_senha
+    send_mail(
+    ~~~~~~~~~^
+        'Redefinição de Senha',
+        ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        fail_silently=False,
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/core/mail/__init__.py", line 88, in send_mail
+    return mail.send()
+           ~~~~~~~~~^^
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/core/mail/message.py", line 301, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/core/mail/backends/smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/core/mail/backends/smtp.py", line 95, in open
+    self.connection.login(self.username, self.password)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vidal/.local/share/uv/python/cpython-3.13.2-linux-x86_64-gnu/lib/python3.13/smtplib.py", line 750, in login
+    raise last_exception
+  File "/home/vidal/.local/share/uv/python/cpython-3.13.2-linux-x86_64-gnu/lib/python3.13/smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+                   ~~~~~~~~~^
+        authmethod, getattr(self, method_name),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        initial_response_ok=initial_response_ok)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vidal/.local/share/uv/python/cpython-3.13.2-linux-x86_64-gnu/lib/python3.13/smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-73906158059sm4240283b3a.144 - gsmtp')
+[2025-03-22 12:00:28] [ERROR] [django.server] "POST /recuperar-senha/ HTTP/1.1" 500 109121
+[2025-03-22 12:00:47] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-22 12:01:06] [INFO] [usuarios] E-mail de recuperação de senha enviado para brunohenrique27.19@gmail.com.
+[2025-03-22 12:01:06] [INFO] [django.server] "POST /recuperar-senha/ HTTP/1.1" 302 0
+[2025-03-22 12:01:06] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-22 12:03:42] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/forms.py changed, reloading.
+[2025-03-22 12:03:47] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-22 12:03:50] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/forms.py changed, reloading.
+[2025-03-22 12:03:52] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-22 12:05:11] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/urls.py changed, reloading.
+[2025-03-22 12:05:13] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-22 12:06:11] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/views.py changed, reloading.
+[2025-03-22 12:06:13] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-22 12:07:15] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/views.py changed, reloading.
+[2025-03-22 12:07:17] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-22 12:08:09] [INFO] [django.server] "GET /resetar-senha/1/cn2efr-5d1620419409932d752341b7e9f2d7b7/ HTTP/1.1" 200 2551
+[2025-03-22 12:08:22] [INFO] [usuarios] Senha redefinida com sucesso para o usuário brunohenrique27.19@gmail.com.
+[2025-03-22 12:08:22] [INFO] [django.server] "POST /resetar-senha/1/cn2efr-5d1620419409932d752341b7e9f2d7b7/ HTTP/1.1" 302 0
+[2025-03-22 12:08:22] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-22 12:08:27] [INFO] [django.server] "GET /recuperar-senha/ HTTP/1.1" 200 2198
+[2025-03-22 12:08:41] [INFO] [django.server] "GET /resetar-senha/1/cn2efr-5d1620419409932d752341b7e9f2d7b7/ HTTP/1.1" 200 2551
+[2025-03-22 12:09:23] [INFO] [usuarios] Senha redefinida com sucesso para o usuário brunohenrique27.19@gmail.com.
+[2025-03-22 12:09:23] [INFO] [django.server] "POST /resetar-senha/1/cn2efr-5d1620419409932d752341b7e9f2d7b7/ HTTP/1.1" 302 0
+[2025-03-22 12:09:23] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-22 12:16:34] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/views.py changed, reloading.
+[2025-03-22 12:16:35] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-22 12:16:36] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/views.py changed, reloading.
+[2025-03-22 12:16:36] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-22 12:16:44] [WARNING] [usuarios] Token inválido para o usuário brunohenrique27.19@gmail.com.
+[2025-03-22 12:16:44] [INFO] [django.server] "GET /resetar-senha/1/cn2efr-5d1620419409932d752341b7e9f2d7b7/ HTTP/1.1" 302 0
+[2025-03-22 12:16:44] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-22 12:16:57] [WARNING] [usuarios] Token inválido para o usuário brunohenrique27.19@gmail.com.
+[2025-03-22 12:16:57] [INFO] [django.server] "GET /resetar-senha/1/cn2efr-5d1620419409932d752341b7e9f2d7b7/ HTTP/1.1" 302 0
+[2025-03-22 12:16:57] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-22 12:17:01] [INFO] [django.server] "GET /recuperar-senha/ HTTP/1.1" 200 2198
+[2025-03-22 12:17:05] [INFO] [django.server] "GET /registrar/ HTTP/1.1" 200 3371
+[2025-03-22 12:17:22] [WARNING] [usuarios] Falha ao registrar usuário. Dados inválidos.
+[2025-03-22 12:17:22] [INFO] [django.server] "POST /registrar/ HTTP/1.1" 200 3546
+[2025-03-22 12:17:42] [INFO] [usuarios] Novo usuário registrado: contatosbibelo@gmail.com
+[2025-03-22 12:17:42] [INFO] [django.server] "POST /registrar/ HTTP/1.1" 302 0
+[2025-03-22 12:17:42] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-22 12:17:48] [INFO] [django.server] "GET /recuperar-senha/ HTTP/1.1" 200 2198
+[2025-03-22 12:17:52] [INFO] [usuarios] E-mail de recuperação de senha enviado para contatosbibelo@gmail.com.
+[2025-03-22 12:17:52] [INFO] [django.server] "POST /recuperar-senha/ HTTP/1.1" 302 0
+[2025-03-22 12:17:52] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-22 12:18:09] [INFO] [django.server] "GET /resetar-senha/6/cn2fhp-59af03502cd71a7e32380bd6a3dc2f2a/ HTTP/1.1" 200 2551
+[2025-03-22 12:18:21] [INFO] [usuarios] Senha redefinida com sucesso para o usuário contatosbibelo@gmail.com.
+[2025-03-22 12:18:21] [INFO] [django.server] "POST /resetar-senha/6/cn2fhp-59af03502cd71a7e32380bd6a3dc2f2a/ HTTP/1.1" 302 0
+[2025-03-22 12:18:21] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-22 12:18:24] [WARNING] [usuarios] Token inválido para o usuário contatosbibelo@gmail.com.
+[2025-03-22 12:18:24] [INFO] [django.server] "GET /resetar-senha/6/cn2fhp-59af03502cd71a7e32380bd6a3dc2f2a/ HTTP/1.1" 302 0
+[2025-03-22 12:18:24] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-22 12:18:31] [WARNING] [usuarios] Token inválido para o usuário contatosbibelo@gmail.com.
+[2025-03-22 12:18:31] [INFO] [django.server] "GET /resetar-senha/6/cn2fhp-59af03502cd71a7e32380bd6a3dc2f2a/ HTTP/1.1" 302 0
+[2025-03-22 12:18:31] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-22 12:20:04] [WARNING] [usuarios] Token inválido para o usuário contatosbibelo@gmail.com.
+[2025-03-22 12:20:04] [INFO] [django.server] "GET /resetar-senha/6/cn2fhp-59af03502cd71a7e32380bd6a3dc2f2a/ HTTP/1.1" 302 0
+[2025-03-22 12:20:04] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-22 12:21:26] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/views.py changed, reloading.
+[2025-03-22 12:21:27] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-22 12:21:48] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/views.py changed, reloading.
+[2025-03-22 12:21:48] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-22 12:25:37] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/views.py changed, reloading.
+[2025-03-22 12:25:38] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-22 12:26:02] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/views.py changed, reloading.
+[2025-03-22 12:26:02] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-22 12:26:06] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/views.py changed, reloading.
+[2025-03-22 12:26:07] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-22 12:26:43] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-22 12:26:45] [INFO] [django.server] "GET /recuperar-senha/ HTTP/1.1" 200 2198
+[2025-03-22 12:26:50] [ERROR] [django.request] Internal Server Error: /recuperar-senha/
+Traceback (most recent call last):
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vidal/Programas/lojex/apps/usuarios/views.py", line 103, in recupera_senha
+    html_message = render_to_string('usuarios/redefinir_senha_email.html', {
+        'reset_url': reset_url,
+        'year': 2025  # Substitua pelo ano atual ou use datetime para o ano atual
+    })
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: usuarios/redefinir_senha_email.html
+[2025-03-22 12:26:50] [ERROR] [django.server] "POST /recuperar-senha/ HTTP/1.1" 500 84326
+[2025-03-22 12:27:49] [INFO] [django.server] "POST /recuperar-senha/ HTTP/1.1" 302 0
+[2025-03-22 12:27:49] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-22 12:32:01] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/views.py changed, reloading.
+[2025-03-22 12:32:02] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-22 12:32:36] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-22 12:32:39] [INFO] [django.server] "GET /recuperar-senha/ HTTP/1.1" 200 2198
+[2025-03-22 12:32:47] [INFO] [django.server] "POST /recuperar-senha/ HTTP/1.1" 302 0
+[2025-03-22 12:32:47] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-22 12:33:31] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/views.py changed, reloading.
+[2025-03-22 12:33:32] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-22 12:33:34] [INFO] [django.server] "GET /recuperar-senha/ HTTP/1.1" 200 2198
+[2025-03-22 12:33:43] [INFO] [django.server] "POST /recuperar-senha/ HTTP/1.1" 302 0
+[2025-03-22 12:33:43] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-22 12:33:59] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/views.py changed, reloading.
+[2025-03-22 12:34:00] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-22 12:34:01] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/views.py changed, reloading.
+[2025-03-22 12:34:03] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-22 12:34:06] [INFO] [django.server] "GET /recuperar-senha/ HTTP/1.1" 200 2198
+[2025-03-22 12:34:16] [INFO] [django.server] "POST /recuperar-senha/ HTTP/1.1" 302 0
+[2025-03-22 12:34:16] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-22 12:34:23] [INFO] [django.server] "GET /resetar-senha/6/cn2g8y-2ecb5adb54960531f1851587c76be639/ HTTP/1.1" 200 2551
+[2025-03-22 12:34:26] [INFO] [django.server] "GET /resetar-senha/6/cn2g8y-2ecb5adb54960531f1851587c76be639/ HTTP/1.1" 200 2551
+[2025-03-22 12:36:03] [INFO] [django.server] "GET /recuperar-senha/ HTTP/1.1" 200 2198
+[2025-03-22 12:36:09] [INFO] [django.server] "POST /recuperar-senha/ HTTP/1.1" 302 0
+[2025-03-22 12:36:09] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-22 12:36:11] [INFO] [django.server] "GET /recuperar-senha/ HTTP/1.1" 200 2198
+[2025-03-22 12:36:17] [INFO] [django.server] "POST /recuperar-senha/ HTTP/1.1" 302 0
+[2025-03-22 12:36:17] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-22 12:36:24] [INFO] [django.server] "GET /resetar-senha/6/cn2gc6-c540711159d4aebbe41ac0e4f98a9306/ HTTP/1.1" 200 2551
+[2025-03-22 12:37:53] [INFO] [django.server] "GET /resetar-senha/6/cn2gc6-c540711159d4aebbe41ac0e4f98a9306/ HTTP/1.1" 200 2551
+[2025-03-22 12:37:58] [INFO] [django.server] "GET /resetar-senha/6/cn2gce-d702e071792fb96dbef97d79d9d4770a/ HTTP/1.1" 200 2551
+[2025-03-22 12:40:29] [INFO] [django.server] "GET /recuperar-senha/ HTTP/1.1" 200 2198
+[2025-03-22 12:40:35] [INFO] [django.server] "POST /recuperar-senha/ HTTP/1.1" 302 0
+[2025-03-22 12:40:35] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-22 12:42:23] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/views.py changed, reloading.
+[2025-03-22 12:42:23] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-22 12:42:26] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/views.py changed, reloading.
+[2025-03-22 12:42:27] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-22 12:43:03] [INFO] [django.server] "GET /recuperar-senha/ HTTP/1.1" 200 2198
+[2025-03-22 12:43:13] [INFO] [django.server] "POST /recuperar-senha/ HTTP/1.1" 302 0
+[2025-03-22 12:43:13] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-22 12:44:13] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/views.py changed, reloading.
+[2025-03-22 12:44:14] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-22 12:44:15] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/views.py changed, reloading.
+[2025-03-22 12:44:15] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-22 12:44:17] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/views.py changed, reloading.
+[2025-03-22 12:44:17] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-22 12:44:20] [INFO] [django.server] "GET /recuperar-senha/ HTTP/1.1" 200 2198
+[2025-03-22 12:44:29] [INFO] [django.server] "POST /recuperar-senha/ HTTP/1.1" 302 0
+[2025-03-22 12:44:29] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-22 12:44:45] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/views.py changed, reloading.
+[2025-03-22 12:44:46] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-22 12:46:26] [INFO] [django.server] "GET /resetar-senha/1/cn2efr-5d1620419409932d752341b7e9f2d7b7/ HTTP/1.1" 302 0
+[2025-03-22 12:46:26] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-22 12:47:59] [INFO] [django.server] "GET /recuperar-senha/ HTTP/1.1" 200 2198
+[2025-03-22 12:48:05] [INFO] [django.server] "POST /recuperar-senha/ HTTP/1.1" 302 0
+[2025-03-22 12:48:05] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-22 12:48:54] [INFO] [django.server] "GET /recuperar-senha/ HTTP/1.1" 200 2198
+[2025-03-22 12:48:59] [INFO] [django.server] "POST /recuperar-senha/ HTTP/1.1" 302 0
+[2025-03-22 12:48:59] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-22 12:49:28] [INFO] [django.server] "GET /resetar-senha/6/cn2gq2-3b21978bc60d0c80e7e8907847237963/ HTTP/1.1" 200 2551
+[2025-03-22 12:49:38] [INFO] [django.server] "GET /resetar-senha/6/cn2gxl-d8a8ca0582cab51b1d8b425218d25610/ HTTP/1.1" 200 2551
+[2025-03-22 12:50:00] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/views.py changed, reloading.
+[2025-03-22 12:50:00] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 12:52:07] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 12:52:52] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/settings.py changed, reloading.
+[2025-03-24 12:52:53] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 12:53:49] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 12:53:53] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/settings.py changed, reloading.
+[2025-03-24 12:53:53] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 12:54:06] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/settings.py changed, reloading.
+[2025-03-24 12:54:07] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 12:54:11] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 12:55:32] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 12:55:52] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/settings.py changed, reloading.
+[2025-03-24 12:55:52] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 12:55:59] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 12:57:39] [WARNING] [django.request] Not Found: /
+[2025-03-24 12:57:39] [WARNING] [django.server] "GET / HTTP/1.1" 404 4599
+[2025-03-24 12:57:41] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-24 12:57:41] [WARNING] [django.request] Not Found: /favicon.ico
+[2025-03-24 12:57:41] [WARNING] [django.server] "GET /favicon.ico HTTP/1.1" 404 4650
+[2025-03-24 12:57:41] [INFO] [django.server] "GET /static/assets/images/logos/logo.svg HTTP/1.1" 200 8334
+[2025-03-24 12:57:41] [INFO] [django.server] "GET /static/assets/libs/jquery/dist/jquery.min.js HTTP/1.1" 200 88151
+[2025-03-24 12:57:41] [INFO] [django.server] "GET /static/assets/css/styles.min.css HTTP/1.1" 200 442049
+[2025-03-24 12:57:41] [INFO] [django.server] "GET /static/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1" 200 80599
+[2025-03-24 12:57:41] [INFO] [django.server] "GET /static/assets/libs/simplebar/dist/simplebar.css HTTP/1.1" 200 3890
+[2025-03-24 12:57:41] [INFO] [django.server] "GET /static/assets/css/icons/tabler-icons/tabler-icons.css HTTP/1.1" 200 146896
+[2025-03-24 12:57:42] [INFO] [django.server] "GET /static/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1" 200 80599
+[2025-03-24 12:57:42] [INFO] [django.server] "GET /static/assets/libs/jquery/dist/jquery.min.js HTTP/1.1" 200 88151
+[2025-03-24 12:57:50] [INFO] [django.server] "GET /recuperar-senha/ HTTP/1.1" 200 2198
+[2025-03-24 12:57:51] [INFO] [django.server] "GET /registrar/ HTTP/1.1" 200 3371
+[2025-03-24 12:57:54] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-24 12:57:56] [INFO] [django.server] "GET /registrar/ HTTP/1.1" 200 3371
+[2025-03-24 12:57:57] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-24 12:57:58] [INFO] [django.server] "GET /recuperar-senha/ HTTP/1.1" 200 2198
+[2025-03-24 12:58:06] [INFO] [django.server] "POST /recuperar-senha/ HTTP/1.1" 200 2314
+[2025-03-24 12:58:31] [INFO] [django.server] "GET /registrar/ HTTP/1.1" 200 3371
+[2025-03-24 12:58:32] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-24 12:58:32] [INFO] [django.server] "GET /recuperar-senha/ HTTP/1.1" 200 2198
+[2025-03-24 12:58:38] [INFO] [django.server] "POST /recuperar-senha/ HTTP/1.1" 302 0
+[2025-03-24 12:58:38] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-24 12:59:35] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/settings.py changed, reloading.
+[2025-03-24 12:59:35] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 12:59:53] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/settings.py changed, reloading.
+[2025-03-24 12:59:53] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 12:59:57] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/settings.py changed, reloading.
+[2025-03-24 12:59:58] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:00:01] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/settings.py changed, reloading.
+[2025-03-24 13:00:01] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:00:13] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/settings.py changed, reloading.
+[2025-03-24 13:00:13] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:00:19] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/settings.py changed, reloading.
+[2025-03-24 13:00:19] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:00:20] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/settings.py changed, reloading.
+[2025-03-24 13:00:22] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:05:19] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/settings.py changed, reloading.
+[2025-03-24 13:05:20] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:05:36] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:06:18] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/urls.py changed, reloading.
+[2025-03-24 13:06:19] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:07:40] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/urls.py changed, reloading.
+[2025-03-24 13:07:41] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:07:43] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/urls.py changed, reloading.
+[2025-03-24 13:07:43] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:07:58] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/urls.py changed, reloading.
+[2025-03-24 13:07:59] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:08:02] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/urls.py changed, reloading.
+[2025-03-24 13:08:03] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:08:04] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/urls.py changed, reloading.
+[2025-03-24 13:08:04] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:08:09] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/urls.py changed, reloading.
+[2025-03-24 13:08:10] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:08:11] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/urls.py changed, reloading.
+[2025-03-24 13:08:11] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:08:13] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/urls.py changed, reloading.
+[2025-03-24 13:08:13] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:08:18] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/urls.py changed, reloading.
+[2025-03-24 13:08:19] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:08:25] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/urls.py changed, reloading.
+[2025-03-24 13:08:26] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:08:28] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/urls.py changed, reloading.
+[2025-03-24 13:08:28] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:09:40] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/views.py changed, reloading.
+[2025-03-24 13:09:41] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:09:42] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/views.py changed, reloading.
+[2025-03-24 13:09:43] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:09:47] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/views.py changed, reloading.
+[2025-03-24 13:09:48] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:09:50] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/views.py changed, reloading.
+[2025-03-24 13:09:51] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:10:06] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/views.py changed, reloading.
+[2025-03-24 13:10:06] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:10:07] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/views.py changed, reloading.
+[2025-03-24 13:10:08] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:10:17] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/views.py changed, reloading.
+[2025-03-24 13:10:18] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:10:36] [INFO] [django.server] "GET /recuperar-senha/ HTTP/1.1" 200 2198
+[2025-03-24 13:10:37] [INFO] [django.server] "GET /registrar/ HTTP/1.1" 200 3371
+[2025-03-24 13:11:22] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/views.py changed, reloading.
+[2025-03-24 13:11:22] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:12:34] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/urls.py changed, reloading.
+[2025-03-24 13:12:34] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:12:37] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/urls.py changed, reloading.
+[2025-03-24 13:12:38] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:13:29] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-24 13:13:30] [INFO] [django.server] "GET /recuperar-senha/ HTTP/1.1" 200 2198
+[2025-03-24 13:13:35] [INFO] [usuarios] E-mail de recuperação de senha enviado para brunohenrique27.19@gmail.com.
+[2025-03-24 13:13:35] [INFO] [django.server] "POST /recuperar-senha/ HTTP/1.1" 302 0+_
+[2025-03-24 13:13:35] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-24 13:18:35] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:18:46] [INFO] [usuarios] Usuário brunovidal@teste.com.br logado com sucesso.
+[2025-03-24 13:18:46] [ERROR] [django.request] Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vidal/Programas/lojex/apps/usuarios/views.py", line 34, in login_user
+    return redirect("pagina_inicial")  # Atualize para a página inicial correta
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/shortcuts.py", line 49, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/shortcuts.py", line 180, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'pagina_inicial' not found. 'pagina_inicial' is not a valid view function or pattern name.
+[2025-03-24 13:18:46] [ERROR] [django.server] "POST /login/ HTTP/1.1" 500 92054
+[2025-03-24 13:18:51] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-24 13:18:52] [INFO] [django.server] "GET /static/assets/images/logos/favicon.png HTTP/1.1" 200 873
+[2025-03-24 13:18:54] [INFO] [django.server] "GET /recuperar-senha/ HTTP/1.1" 200 2198
+[2025-03-24 13:18:55] [INFO] [django.server] "GET /registrar/ HTTP/1.1" 200 3371
+[2025-03-24 13:18:57] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-24 13:18:59] [INFO] [django.server] "GET /registrar/ HTTP/1.1" 200 3371
+[2025-03-24 13:19:26] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-24 13:19:27] [INFO] [django.server] "GET /recuperar-senha/ HTTP/1.1" 200 2198
+[2025-03-24 13:25:51] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/models.py changed, reloading.
+[2025-03-24 13:25:52] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:26:25] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/forms.py changed, reloading.
+[2025-03-24 13:26:26] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:28:50] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:29:58] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/apps.py changed, reloading.
+[2025-03-24 13:29:59] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:31:15] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:32:13] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:35:03] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/apps.py changed, reloading.
+[2025-03-24 13:35:03] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:35:04] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/apps.py changed, reloading.
+[2025-03-24 13:35:08] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:35:09] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/apps.py changed, reloading.
+[2025-03-24 13:35:09] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:35:13] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/apps.py changed, reloading.
+[2025-03-24 13:35:14] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:35:16] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/apps.py changed, reloading.
+[2025-03-24 13:35:16] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:35:21] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/apps.py changed, reloading.
+[2025-03-24 13:35:21] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:35:22] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/apps.py changed, reloading.
+[2025-03-24 13:35:22] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:35:25] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/apps.py changed, reloading.
+[2025-03-24 13:35:25] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:35:29] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/apps.py changed, reloading.
+[2025-03-24 13:35:29] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:35:34] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/apps.py changed, reloading.
+[2025-03-24 13:35:34] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:35:35] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/apps.py changed, reloading.
+[2025-03-24 13:35:36] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:35:37] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/apps.py changed, reloading.
+[2025-03-24 13:35:38] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:48:11] [WARNING] [django.request] Not Found: /
+[2025-03-24 13:48:11] [WARNING] [django.server] "GET / HTTP/1.1" 404 4938
+[2025-03-24 13:48:13] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-24 13:49:32] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/settings.py changed, reloading.
+[2025-03-24 13:49:33] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:49:48] [WARNING] [django.request] Not Found: /
+[2025-03-24 13:49:48] [WARNING] [django.server] "GET / HTTP/1.1" 404 4938
+[2025-03-24 13:50:11] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/urls.py changed, reloading.
+[2025-03-24 13:50:11] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:50:13] [WARNING] [django.request] Not Found: /login/
+[2025-03-24 13:50:13] [WARNING] [django.server] "GET /login/ HTTP/1.1" 404 4968
+[2025-03-24 13:50:15] [INFO] [django.server] "GET / HTTP/1.1" 200 2857
+[2025-03-24 13:50:18] [WARNING] [django.request] Not Found: /login/
+[2025-03-24 13:50:18] [WARNING] [django.server] "GET /login/ HTTP/1.1" 404 4968
+[2025-03-24 13:50:18] [WARNING] [django.request] Not Found: /login/
+[2025-03-24 13:50:18] [WARNING] [django.server] "GET /login/ HTTP/1.1" 404 4968
+[2025-03-24 13:50:25] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/urls.py changed, reloading.
+[2025-03-24 13:50:26] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:50:29] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/urls.py changed, reloading.
+[2025-03-24 13:50:30] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:50:30] [WARNING] [django.request] Not Found: /login/
+[2025-03-24 13:50:30] [WARNING] [django.server] "GET /login/ HTTP/1.1" 404 5028
+[2025-03-24 13:50:32] [WARNING] [django.request] Not Found: /
+[2025-03-24 13:50:32] [WARNING] [django.server] "GET / HTTP/1.1" 404 2643
+[2025-03-24 13:50:37] [WARNING] [django.request] Not Found: /login/
+[2025-03-24 13:50:37] [WARNING] [django.server] "GET /login/ HTTP/1.1" 404 5028
+[2025-03-24 13:50:38] [WARNING] [django.request] Not Found: /login/
+[2025-03-24 13:50:38] [WARNING] [django.server] "GET /login/ HTTP/1.1" 404 5028
+[2025-03-24 13:50:44] [INFO] [django.server] "GET /login/login HTTP/1.1" 301 0
+[2025-03-24 13:50:44] [INFO] [django.server] "GET /login/login/ HTTP/1.1" 200 2869
+[2025-03-24 13:50:46] [INFO] [django.server] "GET /login/recuperar-senha/ HTTP/1.1" 200 2204
+[2025-03-24 13:50:49] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/urls.py changed, reloading.
+[2025-03-24 13:50:50] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 13:50:52] [WARNING] [django.request] Not Found: /login/recuperar-senha/
+[2025-03-24 13:50:52] [WARNING] [django.server] "GET /login/recuperar-senha/ HTTP/1.1" 404 5022
+[2025-03-24 13:50:54] [INFO] [django.server] "GET /recuperar-senha/ HTTP/1.1" 200 2198
+[2025-03-24 13:51:38] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/urls.py changed, reloading.
+[2025-03-24 13:51:39] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 14:17:24] [WARNING] [django.request] Not Found: /registrar/
+[2025-03-24 14:17:25] [WARNING] [django.server] "GET /registrar/ HTTP/1.1" 404 2687
+[2025-03-24 14:17:31] [WARNING] [django.request] Not Found: /registrar/
+[2025-03-24 14:17:31] [WARNING] [django.server] "GET /registrar/ HTTP/1.1" 404 2687
+[2025-03-24 14:17:42] [WARNING] [django.request] Not Found: /registrar/
+[2025-03-24 14:17:42] [WARNING] [django.server] "GET /registrar/ HTTP/1.1" 404 2687
+[2025-03-24 14:17:46] [WARNING] [django.request] Not Found: /login/
+[2025-03-24 14:17:46] [WARNING] [django.server] "GET /login/ HTTP/1.1" 404 2675
+[2025-03-24 14:17:46] [WARNING] [django.request] Not Found: /login/
+[2025-03-24 14:17:46] [WARNING] [django.server] "GET /login/ HTTP/1.1" 404 2675
+[2025-03-24 14:18:09] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/urls.py changed, reloading.
+[2025-03-24 14:18:11] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 14:18:28] [WARNING] [django.request] Not Found: /login/
+[2025-03-24 14:18:28] [WARNING] [django.server] "GET /login/ HTTP/1.1" 404 2336
+[2025-03-24 14:18:30] [WARNING] [django.request] Not Found: /login/
+[2025-03-24 14:18:30] [WARNING] [django.server] "GET /login/ HTTP/1.1" 404 2336
+[2025-03-24 14:18:44] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 14:18:51] [WARNING] [django.request] Not Found: /login/
+[2025-03-24 14:18:51] [WARNING] [django.server] "GET /login/ HTTP/1.1" 404 2336
+[2025-03-24 14:18:57] [WARNING] [django.request] Not Found: /login/
+[2025-03-24 14:18:57] [WARNING] [django.server] "GET /login/ HTTP/1.1" 404 2336
+[2025-03-24 14:19:29] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 14:19:31] [WARNING] [django.request] Not Found: /
+[2025-03-24 14:19:31] [WARNING] [django.server] "GET / HTTP/1.1" 404 2300
+[2025-03-24 14:19:44] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/urls.py changed, reloading.
+[2025-03-24 14:19:45] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 14:19:46] [WARNING] [django.request] Not Found: /
+[2025-03-24 14:19:46] [WARNING] [django.server] "GET / HTTP/1.1" 404 4599
+[2025-03-24 14:19:53] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/urls.py changed, reloading.
+[2025-03-24 14:19:54] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 14:19:56] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/urls.py changed, reloading.
+[2025-03-24 14:19:56] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 14:19:57] [WARNING] [django.request] Not Found: /
+[2025-03-24 14:19:57] [WARNING] [django.server] "GET / HTTP/1.1" 404 4938
+[2025-03-24 14:19:59] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-24 14:20:02] [INFO] [django.server] "GET /recuperar-senha/ HTTP/1.1" 200 2198
+[2025-03-24 14:20:02] [INFO] [django.server] "GET /registrar/ HTTP/1.1" 200 3371
+[2025-03-24 14:20:03] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-24 14:20:54] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-24 14:35:04] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 14:35:35] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/api/routers.py changed, reloading.
+[2025-03-24 14:35:36] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 14:35:47] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/api/routers.py changed, reloading.
+[2025-03-24 14:35:48] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 14:36:50] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/api/routers.py changed, reloading.
+[2025-03-24 14:36:52] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 14:36:54] [WARNING] [django.request] Not Found: /
+[2025-03-24 14:36:54] [WARNING] [django.server] "GET / HTTP/1.1" 404 5085
+[2025-03-24 14:36:55] [WARNING] [django.request] Not Found: /
+[2025-03-24 14:36:55] [WARNING] [django.server] "GET / HTTP/1.1" 404 5085
+[2025-03-24 14:36:58] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-24 14:36:58] [INFO] [django.server] "GET /static/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1" 200 80599
+[2025-03-24 14:36:58] [INFO] [django.server] "GET /static/assets/libs/jquery/dist/jquery.min.js HTTP/1.1" 200 88151
+[2025-03-24 14:36:59] [INFO] [django.server] "GET /api HTTP/1.1" 301 0
+[2025-03-24 14:36:59] [WARNING] [django.request] Not Found: /api/
+[2025-03-24 14:36:59] [WARNING] [django.server] "GET /api/ HTTP/1.1" 404 6547
+[2025-03-24 14:37:03] [WARNING] [django.request] Not Found: /api/openapi
+[2025-03-24 14:37:03] [WARNING] [django.server] "GET /api/openapi HTTP/1.1" 404 6754
+[2025-03-24 14:37:05] [WARNING] [django.request] Not Found: /api/openapi
+[2025-03-24 14:37:05] [WARNING] [django.server] "GET /api/openapi HTTP/1.1" 404 6754
+[2025-03-24 14:37:13] [INFO] [django.server] "GET /api/docs HTTP/1.1" 200 994
+[2025-03-24 14:37:13] [INFO] [django.server] "GET /api/openapi.json HTTP/1.1" 200 961
+[2025-03-24 14:38:08] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/api/views.py changed, reloading.
+[2025-03-24 14:38:09] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 14:38:15] [INFO] [django.server] "GET /api/docs HTTP/1.1" 200 994
+[2025-03-24 14:38:16] [INFO] [django.server] "GET /api/openapi.json HTTP/1.1" 200 1112
+[2025-03-24 14:38:28] [INFO] [django.server] "GET /api/status/ HTTP/1.1" 200 37
+[2025-03-24 14:38:29] [INFO] [django.server] "GET /api/status/ HTTP/1.1" 200 37
+[2025-03-24 14:38:30] [INFO] [django.server] "GET /api/status/ HTTP/1.1" 200 37
+[2025-03-24 14:38:37] [INFO] [django.server] "GET /api/status/ HTTP/1.1" 200 37
+[2025-03-24 14:38:59] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/api/schemas.py changed, reloading.
+[2025-03-24 14:39:00] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 14:39:02] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/api/schemas.py changed, reloading.
+[2025-03-24 14:39:03] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 14:39:12] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/api/schemas.py changed, reloading.
+[2025-03-24 14:39:13] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 14:39:18] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/api/schemas.py changed, reloading.
+[2025-03-24 14:39:18] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 14:39:22] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/api/schemas.py changed, reloading.
+[2025-03-24 14:39:22] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 14:39:26] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/api/schemas.py changed, reloading.
+[2025-03-24 14:39:27] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 14:40:18] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/api/schemas.py changed, reloading.
+[2025-03-24 14:40:19] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 14:40:20] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/api/schemas.py changed, reloading.
+[2025-03-24 14:40:21] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 14:40:23] [INFO] [django.server] "GET /api/docs HTTP/1.1" 200 994
+[2025-03-24 14:40:24] [INFO] [django.server] "GET /api/openapi.json HTTP/1.1" 200 1320
+[2025-03-24 14:40:48] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/api/schemas.py changed, reloading.
+[2025-03-24 14:40:48] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 14:41:41] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/api/schemas.py changed, reloading.
+[2025-03-24 14:41:41] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 14:42:14] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 14:43:41] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 16:32:57] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 16:33:26] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/api/urls.py changed, reloading.
+[2025-03-24 16:33:27] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 16:33:36] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/api/urls.py changed, reloading.
+[2025-03-24 16:33:37] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 16:33:59] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/urls.py changed, reloading.
+[2025-03-24 16:34:00] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 16:34:07] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/urls.py changed, reloading.
+[2025-03-24 16:34:07] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 16:35:31] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 16:50:32] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 16:50:58] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 16:51:08] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 16:52:49] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 16:54:40] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/api/urls.py changed, reloading.
+[2025-03-24 16:54:41] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 16:54:44] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/api/urls.py changed, reloading.
+[2025-03-24 16:54:45] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 16:54:47] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 16:55:55] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/routers.py changed, reloading.
+[2025-03-24 16:55:55] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 16:55:59] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/routers.py changed, reloading.
+[2025-03-24 16:56:00] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 16:56:06] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/api/routers.py changed, reloading.
+[2025-03-24 16:56:06] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 16:56:22] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 16:56:29] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/api/routers.py changed, reloading.
+[2025-03-24 16:56:30] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 16:56:31] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/api/routers.py changed, reloading.
+[2025-03-24 16:56:32] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 16:57:01] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/api/routers.py changed, reloading.
+[2025-03-24 16:57:02] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 16:57:04] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/api/routers.py changed, reloading.
+[2025-03-24 16:57:05] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 16:57:26] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/api/urls.py changed, reloading.
+[2025-03-24 16:57:27] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 16:57:38] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/routers.py changed, reloading.
+[2025-03-24 16:57:39] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 16:58:11] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/routers.py changed, reloading.
+[2025-03-24 16:58:12] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 16:58:44] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/routers.py changed, reloading.
+[2025-03-24 16:58:44] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 16:59:24] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/schemas.py changed, reloading.
+[2025-03-24 16:59:24] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 16:59:29] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/routers.py changed, reloading.
+[2025-03-24 16:59:29] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 16:59:50] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/api/urls.py changed, reloading.
+[2025-03-24 16:59:51] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 17:00:19] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/urls.py changed, reloading.
+[2025-03-24 17:00:20] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 17:25:05] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/schemas.py changed, reloading.
+[2025-03-24 17:25:07] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 17:25:12] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/routers.py changed, reloading.
+[2025-03-24 17:25:13] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 17:25:28] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/api/routers.py changed, reloading.
+[2025-03-24 17:25:29] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 17:25:36] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/api/urls.py changed, reloading.
+[2025-03-24 17:25:36] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 17:26:01] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 17:26:04] [WARNING] [django.request] Not Found: /
+[2025-03-24 17:26:04] [WARNING] [django.server] "GET / HTTP/1.1" 404 4938
+[2025-03-24 17:26:08] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-24 17:26:10] [INFO] [django.server] "GET /recuperar-senha/ HTTP/1.1" 200 2198
+[2025-03-24 17:26:11] [INFO] [django.server] "GET /registrar/ HTTP/1.1" 200 3371
+[2025-03-24 17:26:13] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-24 17:26:14] [INFO] [django.server] "GET /registrar/ HTTP/1.1" 200 3371
+[2025-03-24 17:26:16] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-24 17:26:16] [INFO] [django.server] "GET /recuperar-senha/ HTTP/1.1" 200 2198
+[2025-03-24 17:26:17] [INFO] [django.server] "GET /registrar/ HTTP/1.1" 200 3371

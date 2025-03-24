@@ -5,6 +5,8 @@
     Login
   {% elif request.resolver_match.url_name == "recupera_senha" %}
     Recuperar Senha
+  {% elif request.resolver_match.url_name == "resetar_senha" %}
+    Redefinir Senha
   {% else %}
     Registrar
   {% endif %}
@@ -15,6 +17,8 @@
     {% include 'usuarios/includes/login_usuario.html' %}
   {% elif request.resolver_match.url_name == "recuperar_senha" %}
     {% include 'usuarios/includes/recupera_senha.html' %}
+  {% elif request.resolver_match.url_name == "resetar_senha" %}
+    {% include 'usuarios/includes/redefinir_senha.html' %}
   {% else %}
     {% include 'usuarios/includes/registrar_usuario.html' %}
   {% endif %}
