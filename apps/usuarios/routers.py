@@ -1,59 +1,90 @@
-# apps/motoboys/routers.py
 from ninja import Router
 from typing import List
 from .models import Usuario
 from .schemas import UsuarioIn, UsuarioOut, ErrorResponse
-
+from django.core.exceptions import ObjectDoesNotExist, ValidationError
+from django.core.validators import validate_email
 
 router = Router(tags=["Usuarios"])
 
+def validar_email_unico(email: str):
+    if Usuario.objects.filter(email=email).exists():
+        raise ValidationError("Usuário com este e-mail já existe")
+
 @router.get("/", response=List[UsuarioOut])
 def listar_usuarios(request):
-    usuarios = Usuario.objects.all()
-    return [UsuarioOut.from_orm(usuario) for usuario in usuarios]
-
+    try:
+        usuarios = Usuario.objects.all()
+        return [UsuarioOut.model_validate(usuario) for usuario in usuarios]  # Usando model_validate()
+    except Exception as e:
+        return 500, ErrorResponse(detail="Erro ao listar usuários: " + str(e))
 
 @router.get("/{usuario_id}", response={200: UsuarioOut, 404: ErrorResponse})
 def obter_usuario(request, usuario_id: int):
-    usuario = Usuario.objects.filter(id=usuario_id).first()
-    if not usuario:
+    try:
+        usuario = Usuario.objects.get(id=usuario_id)
+        return UsuarioOut.model_validate(usuario)  # Usando model_validate()
+    except ObjectDoesNotExist:
         return 404, ErrorResponse(detail="Usuário não encontrado")
-    return UsuarioOut.from_orm(usuario)
-
+    except Exception as e:
+        return 500, ErrorResponse(detail="Erro ao obter usuário: " + str(e))
 
 @router.post("/", response={201: UsuarioOut, 400: ErrorResponse})
 def criar_usuario(request, usuario: UsuarioIn):
-    if Usuario.objects.filter(email=usuario.email).exists():
-        return 400, ErrorResponse(detail="Usuário com este e-mail já existe")
-    
-    data = usuario.dict()
-    senha = data.pop("senha", None)
-    usuario_obj = Usuario.objects.create_user(senha=senha, **data)
-    return 201, UsuarioOut.from_orm(usuario_obj)
+    try:
+        # Validando se o email já existe
+        validar_email_unico(usuario.email)
+        
+        data = usuario.model_dump()  # Convertendo para dicionário validado
+        senha = data.pop("senha", None)
 
+        if senha:
+            senha = senha.get_secret_value()  # Obtendo a string real de SecretStr
+        
+        usuario_obj = Usuario.objects.create_user(senha=senha, **data)
+        return 201, UsuarioOut.model_validate(usuario_obj)  # Usando model_validate()
+    except ValidationError as e:
+        # Tratando o erro para retornar uma string ao invés de lista
+        return 400, ErrorResponse(detail=str(e.message))
+    except Exception as e:
+        return 500, ErrorResponse(detail="Erro ao criar usuário: " + str(e))
 
 @router.put("/{usuario_id}", response={200: UsuarioOut, 404: ErrorResponse})
 def atualizar_usuario(request, usuario_id: int, data: UsuarioIn):
-    usuario_obj = Usuario.objects.filter(id=usuario_id).first()
-    if not usuario_obj:
-        return 404, ErrorResponse(detail="Usuário não encontrado")
-    
-    data_dict = data.dict()
-    senha = data_dict.pop("senha", None)
-    
-    for attr, value in data_dict.items():
-        setattr(usuario_obj, attr, value)
-    
-    if senha:
-        usuario_obj.set_password(senha)
-    
-    usuario_obj.save()
-    return 200, UsuarioOut.from_orm(usuario_obj)
+    try:
+        usuario_obj = Usuario.objects.get(id=usuario_id)  # Usando .get() para buscar o usuário
+        
+        # Convertendo para dicionário, mas tratando os campos opcionais
+        data_dict = data.model_dump()  # Usando model_dump()
+        senha = data_dict.pop("senha", None)
 
+        # Atualizando os campos do usuário, mas apenas se o campo não for None
+        for attr, value in data_dict.items():
+            if value is not None:  # Verificando se o valor não é None antes de atribuir
+                setattr(usuario_obj, attr, value)
+        
+        # Atualizando a senha se fornecida
+        if senha:
+            senha = senha.get_secret_value()  # Obtendo a senha de forma segura
+            usuario_obj.set_password(senha)
+        
+        # Salvando as alterações
+        usuario_obj.save()
+        
+        return 200, UsuarioOut.model_validate(usuario_obj)  # Retorna a resposta validada
+    
+    except ObjectDoesNotExist:
+        return 404, ErrorResponse(detail="Usuário não encontrado")
+    except Exception as e:
+        return 500, ErrorResponse(detail="Erro ao atualizar usuário: " + str(e))
+    
 @router.delete("/{usuario_id}", response={200: dict, 404: ErrorResponse})
 def deletar_usuario(request, usuario_id: int):
-    usuario_obj = Usuario.objects.filter(id=usuario_id).first()
-    if not usuario_obj:
+    try:
+        usuario_obj = Usuario.objects.get(id=usuario_id)
+        usuario_obj.delete()
+        return 200, {"success": True}
+    except ObjectDoesNotExist:
         return 404, ErrorResponse(detail="Usuário não encontrado")
-    usuario_obj.delete()
-    return 200, {"success": True}
+    except Exception as e:
+        return 500, ErrorResponse(detail="Erro ao deletar usuário: " + str(e))

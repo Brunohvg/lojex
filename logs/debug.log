@@ -498,3 +498,141 @@ NameError: name 'HttpError' is not defined. Did you mean: 'TypeError'?
 [2025-03-25 07:13:49] [WARNING] [django.request] Not Found: /api/usuarios/152
 [2025-03-25 07:13:49] [WARNING] [django.server] "GET /api/usuarios/152 HTTP/1.1" 404 46
 [2025-03-25 07:14:46] [INFO] [django.server] "GET /api/usuarios/2 HTTP/1.1" 200 216
+[2025-03-25 13:00:12] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:02:07] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/schemas.py changed, reloading.
+[2025-03-25 13:02:07] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:04:12] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/routers.py changed, reloading.
+[2025-03-25 13:04:13] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:04:17] [WARNING] [django.request] Not Found: /
+[2025-03-25 13:04:17] [WARNING] [django.server] "GET / HTTP/1.1" 404 5085
+[2025-03-25 13:04:19] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-25 13:04:19] [INFO] [django.server] "GET /static/assets/images/logos/logo.svg HTTP/1.1" 200 8334
+[2025-03-25 13:04:19] [INFO] [django.server] "GET /static/assets/libs/jquery/dist/jquery.min.js HTTP/1.1" 200 88151
+[2025-03-25 13:04:19] [INFO] [django.server] "GET /static/assets/css/styles.min.css HTTP/1.1" 200 442049
+[2025-03-25 13:04:19] [INFO] [django.server] "GET /static/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1" 200 80599
+[2025-03-25 13:04:19] [INFO] [django.server] "GET /static/assets/libs/simplebar/dist/simplebar.css HTTP/1.1" 200 3890
+[2025-03-25 13:04:19] [INFO] [django.server] "GET /static/assets/css/icons/tabler-icons/tabler-icons.css HTTP/1.1" 200 146896
+[2025-03-25 13:04:19] [INFO] [django.server] "GET /static/assets/libs/jquery/dist/jquery.min.js HTTP/1.1" 200 88151
+[2025-03-25 13:04:19] [INFO] [django.server] "GET /static/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1" 200 80599
+[2025-03-25 13:04:19] [INFO] [django.server] "GET /api/docs HTTP/1.1" 200 986
+[2025-03-25 13:04:20] [INFO] [django.server] "GET /api/openapi.json HTTP/1.1" 200 3787
+[2025-03-25 13:04:24] [INFO] [django.server] "GET /api/usuarios/ HTTP/1.1" 200 1566
+[2025-03-25 13:04:35] [INFO] [django.server] "GET /api/usuarios/1 HTTP/1.1" 200 226
+[2025-03-25 13:04:49] [INFO] [django.server] "POST /api/usuarios/ HTTP/1.1" 201 199
+[2025-03-25 13:04:57] [WARNING] [django.request] Bad Request: /api/usuarios/
+[2025-03-25 13:04:57] [WARNING] [django.server] "POST /api/usuarios/ HTTP/1.1" 400 57
+[2025-03-25 13:04:59] [WARNING] [django.request] Bad Request: /api/usuarios/
+[2025-03-25 13:04:59] [WARNING] [django.server] "POST /api/usuarios/ HTTP/1.1" 400 57
+[2025-03-25 13:05:00] [WARNING] [django.request] Bad Request: /api/usuarios/
+[2025-03-25 13:05:00] [WARNING] [django.server] "POST /api/usuarios/ HTTP/1.1" 400 57
+[2025-03-25 13:06:38] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/routers.py changed, reloading.
+[2025-03-25 13:06:39] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:06:50] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/schemas.py changed, reloading.
+[2025-03-25 13:06:50] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:07:07] [WARNING] [django.request] Unprocessable Content: /api/usuarios/
+[2025-03-25 13:07:07] [WARNING] [django.server] "POST /api/usuarios/ HTTP/1.1" 422 218
+[2025-03-25 13:08:01] [INFO] [django.server] "POST /api/usuarios/ HTTP/1.1" 201 214
+[2025-03-25 13:11:30] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/routers.py changed, reloading.
+[2025-03-25 13:11:31] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:11:58] [WARNING] [django.request] Bad Request: /api/usuarios/
+[2025-03-25 13:11:58] [WARNING] [django.server] "POST /api/usuarios/ HTTP/1.1" 400 61
+[2025-03-25 13:12:17] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/routers.py changed, reloading.
+[2025-03-25 13:12:18] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:12:20] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/routers.py changed, reloading.
+[2025-03-25 13:12:21] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:12:22] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/routers.py changed, reloading.
+[2025-03-25 13:12:22] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:13:25] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/routers.py changed, reloading.
+[2025-03-25 13:13:26] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:13:28] [WARNING] [django.request] Bad Request: /api/usuarios/
+[2025-03-25 13:13:28] [WARNING] [django.server] "POST /api/usuarios/ HTTP/1.1" 400 57
+[2025-03-25 13:13:33] [WARNING] [django.request] Bad Request: /api/usuarios/
+[2025-03-25 13:13:33] [WARNING] [django.server] "POST /api/usuarios/ HTTP/1.1" 400 57
+[2025-03-25 13:13:47] [WARNING] [django.request] Unprocessable Content: /api/usuarios/
+[2025-03-25 13:13:47] [WARNING] [django.server] "POST /api/usuarios/ HTTP/1.1" 422 218
+[2025-03-25 13:14:41] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/routers.py changed, reloading.
+[2025-03-25 13:14:42] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:14:46] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/routers.py changed, reloading.
+[2025-03-25 13:14:47] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:14:58] [WARNING] [django.request] Unprocessable Content: /api/usuarios/
+[2025-03-25 13:14:58] [WARNING] [django.server] "POST /api/usuarios/ HTTP/1.1" 422 218
+[2025-03-25 13:15:00] [WARNING] [django.request] Unprocessable Content: /api/usuarios/
+[2025-03-25 13:15:00] [WARNING] [django.server] "POST /api/usuarios/ HTTP/1.1" 422 218
+[2025-03-25 13:15:05] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/routers.py changed, reloading.
+[2025-03-25 13:15:05] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:15:09] [WARNING] [django.request] Unprocessable Content: /api/usuarios/
+[2025-03-25 13:15:09] [WARNING] [django.server] "POST /api/usuarios/ HTTP/1.1" 422 218
+[2025-03-25 13:16:06] [INFO] [django.server] "GET /api/usuarios/ HTTP/1.1" 200 1983
+[2025-03-25 13:16:14] [WARNING] [django.request] Unprocessable Content: /api/usuarios/
+[2025-03-25 13:16:14] [WARNING] [django.server] "POST /api/usuarios/ HTTP/1.1" 422 218
+[2025-03-25 13:16:47] [INFO] [django.server] "DELETE /api/usuarios/9 HTTP/1.1" 200 17
+[2025-03-25 13:16:50] [WARNING] [django.request] Not Found: /api/usuarios/9
+[2025-03-25 13:16:50] [WARNING] [django.server] "DELETE /api/usuarios/9 HTTP/1.1" 404 46
+[2025-03-25 13:16:53] [WARNING] [django.request] Not Found: /api/usuarios/9
+[2025-03-25 13:16:53] [WARNING] [django.server] "DELETE /api/usuarios/9 HTTP/1.1" 404 46
+[2025-03-25 13:16:59] [WARNING] [django.request] Unprocessable Content: /api/usuarios/
+[2025-03-25 13:16:59] [WARNING] [django.server] "POST /api/usuarios/ HTTP/1.1" 422 218
+[2025-03-25 13:17:07] [INFO] [django.server] "POST /api/usuarios/ HTTP/1.1" 201 215
+[2025-03-25 13:17:17] [INFO] [django.server] "DELETE /api/usuarios/10 HTTP/1.1" 200 17
+[2025-03-25 13:17:58] [WARNING] [django.request] Bad Request: /api/usuarios/7
+[2025-03-25 13:17:58] [WARNING] [django.server] "PUT /api/usuarios/7 HTTP/1.1" 400 113
+[2025-03-25 13:18:16] [ERROR] [django] Schema for status 500 is not set in response dict_keys([200, 404])
+Traceback (most recent call last):
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/ninja/operation.py", line 134, in run
+    return self._result_to_response(request, result, temporal_response)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/ninja/operation.py", line 262, in _result_to_response
+    raise ConfigError(
+    ...<2 lines>...
+    )
+ninja.errors.ConfigError: Schema for status 500 is not set in response dict_keys([200, 404])
+[2025-03-25 13:18:16] [ERROR] [django.request] Internal Server Error: /api/usuarios/7
+[2025-03-25 13:18:16] [ERROR] [django.server] "PUT /api/usuarios/7 HTTP/1.1" 500 555
+[2025-03-25 13:20:07] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/routers.py changed, reloading.
+[2025-03-25 13:20:08] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:20:24] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/schemas.py changed, reloading.
+[2025-03-25 13:20:24] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:21:38] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/routers.py changed, reloading.
+[2025-03-25 13:21:38] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:21:40] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/routers.py changed, reloading.
+[2025-03-25 13:21:40] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:21:55] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/schemas.py changed, reloading.
+[2025-03-25 13:21:55] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:21:57] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/schemas.py changed, reloading.
+[2025-03-25 13:21:58] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:22:05] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/schemas.py changed, reloading.
+[2025-03-25 13:22:05] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:22:07] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/schemas.py changed, reloading.
+[2025-03-25 13:22:07] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:22:09] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/schemas.py changed, reloading.
+[2025-03-25 13:22:10] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:22:11] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/schemas.py changed, reloading.
+[2025-03-25 13:22:12] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:22:24] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/schemas.py changed, reloading.
+[2025-03-25 13:22:25] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:22:29] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/schemas.py changed, reloading.
+[2025-03-25 13:22:30] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:22:42] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/schemas.py changed, reloading.
+[2025-03-25 13:22:42] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:22:44] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/schemas.py changed, reloading.
+[2025-03-25 13:22:44] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:22:50] [INFO] [django.server] "PUT /api/usuarios/7 HTTP/1.1" 200 210
+[2025-03-25 13:22:56] [INFO] [django.server] "PUT /api/usuarios/7 HTTP/1.1" 200 210
+[2025-03-25 13:23:03] [WARNING] [django.request] Bad Request: /api/usuarios/7
+[2025-03-25 13:23:03] [WARNING] [django.server] "PUT /api/usuarios/7 HTTP/1.1" 400 113
+[2025-03-25 13:23:10] [INFO] [django.server] "PUT /api/usuarios/7 HTTP/1.1" 200 210
+[2025-03-25 13:23:21] [INFO] [django.server] "PUT /api/usuarios/7 HTTP/1.1" 200 210
+[2025-03-25 13:23:28] [INFO] [django.server] "PUT /api/usuarios/7 HTTP/1.1" 200 207
+[2025-03-25 13:23:44] [WARNING] [django.request] Unprocessable Content: /api/usuarios/7
+[2025-03-25 13:23:44] [WARNING] [django.server] "PUT /api/usuarios/7 HTTP/1.1" 422 215
+[2025-03-25 13:39:33] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/schemas.py changed, reloading.
+[2025-03-25 13:39:34] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:39:36] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/schemas.py changed, reloading.
+[2025-03-25 13:39:37] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:39:43] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/schemas.py changed, reloading.
+[2025-03-25 13:39:44] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:40:01] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuarios/schemas.py changed, reloading.
+[2025-03-25 13:40:01] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:41:16] [INFO] [django.server] "POST /api/usuarios/ HTTP/1.1" 201 215
+[2025-03-25 13:41:19] [WARNING] [django.request] Bad Request: /api/usuarios/
+[2025-03-25 13:41:19] [WARNING] [django.server] "POST /api/usuarios/ HTTP/1.1" 400 57
