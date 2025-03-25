@@ -1,28 +1,50 @@
-"""from ninja import Router
-from . import schemas  # Importando os esquemas Pydantic
-from . import views  # Aqui você pode definir as funções para a lógica de negócios
+# apps/motoboys/routers.py
+from ninja import Router
+from typing import List
+from .models import Usuario
+from .schemas import UsuarioIn, UsuarioOut, ErrorResponse
+from django.shortcuts import get_object_or_404
 
-router = Router()
+router = Router(tags=["Usuarios"])
 
-# Exemplo de como definir as rotas no NinjaAPI
-@router.get("/usuarios/")
+@router.get("/", response=List[UsuarioOut])
 def listar_usuarios(request):
-    # A lógica para listar os usuários
-    # Substitua por lógica real que consulta o banco de dados
-    usuarios = [
-        {"id": 1, "nome": "João", "email": "joao@example.com", "data_criacao": "2022-01-01", "data_atualizacao": "2022-01-01"},
-        {"id": 2, "nome": "Maria", "email": "maria@example.com", "data_criacao": "2022-01-01", "data_atualizacao": "2022-01-01"}
-    ]
-    return {"usuarios": usuarios}
+    usuarios = Usuario.objects.all()
+    return [UsuarioOut.from_orm(usuario) for usuario in usuarios]
 
-@router.post("/usuarios/")
-def criar_usuario(request, data: schemas.CriarUsuarioSchema):
-    # A lógica para criar um usuário
-    # Exemplo de como salvar no banco de dados usando Django ORM (adaptar conforme sua necessidade)
-    novo_usuario = {
-        "nome": data.nome,
-        "email": data.email,
-        "senha": data.senha,  # Não armazene a senha diretamente; sempre a armazene de forma segura
-    }
-    # Salve o novo usuário no banco de dados aqui (
-"""
+@router.get("/{usuario_id}", response=UsuarioOut)
+def obter_usuario(request, usuario_id: int):
+    usuario = get_object_or_404(Usuario, id=usuario_id)
+    return UsuarioOut.from_orm(usuario)
+
+@router.post("/", response={201: UsuarioOut, 400: ErrorResponse})
+def criar_usuario(request, usuario: UsuarioIn):
+    if Usuario.objects.filter(email=usuario.email).exists():
+        return 400, ErrorResponse(detail="Usuário com este e-mail já existe")
+    
+    data = usuario.dict()
+    senha = data.pop("senha", None)
+    usuario_obj = Usuario.objects.create_user(senha=senha, **data)
+    return 201, UsuarioOut.from_orm(usuario_obj)
+
+
+@router.put("/{usuario_id}", response=UsuarioOut)
+def atualizar_usuario(request, usuario_id: int, data: UsuarioIn):
+    usuario_obj = get_object_or_404(Usuario, id=usuario_id)
+    data_dict = data.dict()
+    senha = data_dict.pop("senha", None)
+    
+    for attr, value in data_dict.items():
+        setattr(usuario_obj, attr, value)
+    
+    if senha:
+        usuario_obj.set_password(senha)
+    
+    usuario_obj.save()
+    return UsuarioOut.from_orm(usuario_obj)
+
+@router.delete("/{usuario_id}")
+def deletar_usuario(request, usuario_id: int):
+    usuario_obj = get_object_or_404(Usuario, id=usuario_id)
+    usuario_obj.delete()
+    return {"success": True}

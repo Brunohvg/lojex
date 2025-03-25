@@ -1,21 +1,27 @@
-"""from pydantic import BaseModel, EmailStr
+from ninja import Schema
 from datetime import datetime
+from typing import Optional
 
-class UsuarioSchema(BaseModel):
+# Schema para entrada de dados ao criar/atualizar usuário
+class UsuarioIn(Schema):
+    nome: str
+    email: str
+    senha: Optional[str] = None  # senha é opcional e utilizada somente para criação/atualização
+
+# Schema para saída dos dados do usuário
+class UsuarioOut(Schema):
     id: int
     nome: str
-    email: EmailStr
+    email: str
     data_criacao: datetime
     data_atualizacao: datetime
+    is_active: bool
+    is_staff: bool
+    is_superuser: bool
 
     class Config:
-        orm_mode = True  # Permite que o Pydantic converta os objetos ORM do Django em dicts
+        orm_mode = True  # Permite converter instâncias ORM (do Django) para o schema
 
-class CriarUsuarioSchema(BaseModel):
-    nome: str
-    email: EmailStr
-    senha: str  # A senha não será retornada, mas será usada na criação do usuário
 
-    class Config:
-        orm_mode = True
-"""
+class ErrorResponse(Schema):
+    detail: str
