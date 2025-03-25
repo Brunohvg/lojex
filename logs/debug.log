@@ -818,3 +818,46 @@ django.urls.exceptions.NoReverseMatch: Reverse for 'pagina_inicial' not found. '
 [2025-03-24 17:26:16] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
 [2025-03-24 17:26:16] [INFO] [django.server] "GET /recuperar-senha/ HTTP/1.1" 200 2198
 [2025-03-24 17:26:17] [INFO] [django.server] "GET /registrar/ HTTP/1.1" 200 3371
+[2025-03-24 21:16:50] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 21:16:54] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-24 21:16:55] [INFO] [django.server] "GET /static/assets/images/logos/logo.svg HTTP/1.1" 200 8334
+[2025-03-24 21:16:57] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-24 21:16:57] [INFO] [django.server] "GET /static/assets/images/logos/logo.svg HTTP/1.1" 304 0
+[2025-03-24 21:16:58] [INFO] [django.server] "GET /recuperar-senha/ HTTP/1.1" 200 2198
+[2025-03-24 21:16:58] [INFO] [django.server] "GET /static/assets/images/logos/logo.svg HTTP/1.1" 304 0
+[2025-03-24 21:16:59] [INFO] [django.server] "GET /registrar/ HTTP/1.1" 200 3371
+[2025-03-24 21:16:59] [INFO] [django.server] "GET /static/assets/images/logos/logo.svg HTTP/1.1" 304 0
+[2025-03-24 21:17:01] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-24 21:17:01] [INFO] [django.server] "GET /static/assets/images/logos/logo.svg HTTP/1.1" 304 0
+[2025-03-24 21:17:03] [INFO] [django.server] "GET /recuperar-senha/ HTTP/1.1" 200 2198
+[2025-03-24 21:17:03] [INFO] [django.server] "GET /static/assets/images/logos/logo.svg HTTP/1.1" 304 0
+[2025-03-24 21:17:04] [INFO] [django.server] "GET /registrar/ HTTP/1.1" 200 3371
+[2025-03-24 21:17:04] [INFO] [django.server] "GET /static/assets/images/logos/logo.svg HTTP/1.1" 304 0
+[2025-03-24 21:17:06] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-24 21:17:06] [INFO] [django.server] "GET /static/assets/images/logos/logo.svg HTTP/1.1" 304 0
+[2025-03-24 21:17:10] [INFO] [usuarios] Usuário brunovidal@teste.com.br logado com sucesso.
+[2025-03-24 21:17:10] [ERROR] [django.request] Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vidal/programas_python/lojex/apps/usuarios/views.py", line 34, in login_user
+    return redirect("pagina_inicial")  # Atualize para a página inicial correta
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/shortcuts.py", line 49, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/shortcuts.py", line 180, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'pagina_inicial' not found. 'pagina_inicial' is not a valid view function or pattern name.
+[2025-03-24 21:17:10] [ERROR] [django.server] "POST /login/ HTTP/1.1" 500 92160
+[2025-03-24 21:25:08] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-24 21:25:10] [WARNING] [django.request] Not Found: /
+[2025-03-24 21:25:10] [WARNING] [django.server] "GET / HTTP/1.1" 404 4938
+[2025-03-24 21:25:14] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-24 21:25:14] [INFO] [django.server] "GET /static/assets/images/logos/logo.svg HTTP/1.1" 304 0

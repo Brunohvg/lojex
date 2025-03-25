@@ -10,8 +10,8 @@ mais detalhes: https://docs.djangoproject.com/en/5.1/
 import os
 from decouple import config
 from pathlib import Path
-import logging
-from logging.handlers import RotatingFileHandler, TimedRotatingFileHandler
+import logging  # noqa: F401
+from logging.handlers import RotatingFileHandler, TimedRotatingFileHandler  # noqa: F401
 
 # =============================================================================
 # Caminhos do Projeto
@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Apps personalizados
-    'apps.api',
+    'apps.api_rest',
     'apps.motoboys',
     'apps.notificacoes',
     'apps.pedidos',
