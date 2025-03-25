@@ -3,7 +3,7 @@ from ninja import Router
 from typing import List
 from .models import Usuario
 from .schemas import UsuarioIn, UsuarioOut, ErrorResponse
-from django.shortcuts import get_object_or_404
+
 
 router = Router(tags=["Usuarios"])
 
@@ -12,10 +12,14 @@ def listar_usuarios(request):
     usuarios = Usuario.objects.all()
     return [UsuarioOut.from_orm(usuario) for usuario in usuarios]
 
-@router.get("/{usuario_id}", response=UsuarioOut)
+
+@router.get("/{usuario_id}", response={200: UsuarioOut, 404: ErrorResponse})
 def obter_usuario(request, usuario_id: int):
-    usuario = get_object_or_404(Usuario, id=usuario_id)
+    usuario = Usuario.objects.filter(id=usuario_id).first()
+    if not usuario:
+        return 404, ErrorResponse(detail="Usuário não encontrado")
     return UsuarioOut.from_orm(usuario)
+
 
 @router.post("/", response={201: UsuarioOut, 400: ErrorResponse})
 def criar_usuario(request, usuario: UsuarioIn):
@@ -28,9 +32,12 @@ def criar_usuario(request, usuario: UsuarioIn):
     return 201, UsuarioOut.from_orm(usuario_obj)
 
 
-@router.put("/{usuario_id}", response=UsuarioOut)
+@router.put("/{usuario_id}", response={200: UsuarioOut, 404: ErrorResponse})
 def atualizar_usuario(request, usuario_id: int, data: UsuarioIn):
-    usuario_obj = get_object_or_404(Usuario, id=usuario_id)
+    usuario_obj = Usuario.objects.filter(id=usuario_id).first()
+    if not usuario_obj:
+        return 404, ErrorResponse(detail="Usuário não encontrado")
+    
     data_dict = data.dict()
     senha = data_dict.pop("senha", None)
     
@@ -41,10 +48,12 @@ def atualizar_usuario(request, usuario_id: int, data: UsuarioIn):
         usuario_obj.set_password(senha)
     
     usuario_obj.save()
-    return UsuarioOut.from_orm(usuario_obj)
+    return 200, UsuarioOut.from_orm(usuario_obj)
 
-@router.delete("/{usuario_id}")
+@router.delete("/{usuario_id}", response={200: dict, 404: ErrorResponse})
 def deletar_usuario(request, usuario_id: int):
-    usuario_obj = get_object_or_404(Usuario, id=usuario_id)
+    usuario_obj = Usuario.objects.filter(id=usuario_id).first()
+    if not usuario_obj:
+        return 404, ErrorResponse(detail="Usuário não encontrado")
     usuario_obj.delete()
-    return {"success": True}
+    return 200, {"success": True}
