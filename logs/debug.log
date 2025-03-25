@@ -636,3 +636,132 @@ ninja.errors.ConfigError: Schema for status 500 is not set in response dict_keys
 [2025-03-25 13:41:16] [INFO] [django.server] "POST /api/usuarios/ HTTP/1.1" 201 215
 [2025-03-25 13:41:19] [WARNING] [django.request] Bad Request: /api/usuarios/
 [2025-03-25 13:41:19] [WARNING] [django.server] "POST /api/usuarios/ HTTP/1.1" 400 57
+[2025-03-25 13:43:41] [INFO] [django.server] "GET /api/usuarios/1 HTTP/1.1" 200 226
+[2025-03-25 13:43:43] [WARNING] [django.request] Not Found: /api/usuarios/10
+[2025-03-25 13:43:43] [WARNING] [django.server] "GET /api/usuarios/10 HTTP/1.1" 404 46
+[2025-03-25 13:43:46] [INFO] [django.server] "GET /api/usuarios/11 HTTP/1.1" 200 215
+[2025-03-25 13:46:25] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboys/models.py changed, reloading.
+[2025-03-25 13:46:26] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:46:28] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboys/models.py changed, reloading.
+[2025-03-25 13:46:32] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:46:43] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboys/models.py changed, reloading.
+[2025-03-25 13:46:43] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:46:44] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboys/models.py changed, reloading.
+[2025-03-25 13:46:45] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:46:46] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboys/models.py changed, reloading.
+[2025-03-25 13:46:47] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:46:49] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboys/models.py changed, reloading.
+[2025-03-25 13:46:50] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:46:51] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboys/models.py changed, reloading.
+[2025-03-25 13:46:52] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:46:53] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboys/models.py changed, reloading.
+[2025-03-25 13:46:54] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:46:59] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboys/models.py changed, reloading.
+[2025-03-25 13:47:00] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:47:35] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboys/models.py changed, reloading.
+[2025-03-25 13:47:35] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:47:37] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboys/models.py changed, reloading.
+[2025-03-25 13:47:37] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:47:40] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboys/models.py changed, reloading.
+[2025-03-25 13:47:40] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:47:45] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboys/models.py changed, reloading.
+[2025-03-25 13:47:45] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:47:47] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboys/models.py changed, reloading.
+[2025-03-25 13:47:47] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:47:52] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboys/models.py changed, reloading.
+[2025-03-25 13:47:52] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:47:54] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboys/models.py changed, reloading.
+[2025-03-25 13:47:54] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:47:56] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboys/models.py changed, reloading.
+[2025-03-25 13:47:57] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:47:59] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboys/models.py changed, reloading.
+[2025-03-25 13:48:00] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:48:03] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboys/models.py changed, reloading.
+[2025-03-25 13:48:04] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:48:05] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboys/models.py changed, reloading.
+[2025-03-25 13:48:06] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:48:08] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboys/models.py changed, reloading.
+[2025-03-25 13:48:08] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:48:11] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboys/models.py changed, reloading.
+[2025-03-25 13:48:11] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:48:15] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboys/models.py changed, reloading.
+[2025-03-25 13:48:15] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:48:21] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboys/models.py changed, reloading.
+[2025-03-25 13:48:21] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:48:23] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboys/models.py changed, reloading.
+[2025-03-25 13:48:23] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:48:26] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboys/models.py changed, reloading.
+[2025-03-25 13:48:26] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:48:28] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboys/models.py changed, reloading.
+[2025-03-25 13:48:28] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:48:30] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboys/models.py changed, reloading.
+[2025-03-25 13:48:31] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:48:33] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboys/models.py changed, reloading.
+[2025-03-25 13:48:33] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:48:36] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboys/models.py changed, reloading.
+[2025-03-25 13:48:36] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:48:40] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboys/models.py changed, reloading.
+[2025-03-25 13:48:41] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:48:42] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboys/models.py changed, reloading.
+[2025-03-25 13:48:43] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:48:48] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboys/models.py changed, reloading.
+[2025-03-25 13:48:48] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:48:50] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboys/models.py changed, reloading.
+[2025-03-25 13:48:50] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 13:48:56] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboys/models.py changed, reloading.
+[2025-03-25 13:48:57] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 16:36:43] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 16:36:46] [WARNING] [django.request] Not Found: /
+[2025-03-25 16:36:46] [WARNING] [django.server] "GET / HTTP/1.1" 404 5085
+[2025-03-25 16:36:53] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-25 16:36:54] [INFO] [django.server] "GET /api/docs HTTP/1.1" 200 986
+[2025-03-25 16:36:54] [INFO] [django.server] "GET /api/openapi.json HTTP/1.1" 200 3964
+[2025-03-25 16:37:00] [ERROR] [django] Schema for status 500 is not set in response dict_keys([200])
+Traceback (most recent call last):
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/ninja/operation.py", line 134, in run
+    return self._result_to_response(request, result, temporal_response)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vidal/Programas/lojex/.venv/lib/python3.13/site-packages/ninja/operation.py", line 262, in _result_to_response
+    raise ConfigError(
+    ...<2 lines>...
+    )
+ninja.errors.ConfigError: Schema for status 500 is not set in response dict_keys([200])
+[2025-03-25 16:37:00] [ERROR] [django.request] Internal Server Error: /api/usuarios/
+[2025-03-25 16:37:00] [ERROR] [django.server] "GET /api/usuarios/ HTTP/1.1" 500 550
+[2025-03-25 16:37:50] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 16:37:53] [INFO] [django.server] "GET /api/usuarios/ HTTP/1.1" 200 1961
+[2025-03-25 16:41:26] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 16:41:42] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/settings.py changed, reloading.
+[2025-03-25 16:41:43] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 16:41:45] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/settings.py changed, reloading.
+[2025-03-25 16:41:45] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 16:41:52] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/settings.py changed, reloading.
+[2025-03-25 16:41:53] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 16:41:57] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 16:42:07] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/loja/apps.py changed, reloading.
+[2025-03-25 16:42:08] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 16:42:31] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/motoboy/apps.py changed, reloading.
+[2025-03-25 16:42:31] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 16:43:09] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/settings.py changed, reloading.
+[2025-03-25 16:43:10] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 16:43:25] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/apps/usuario/apps.py changed, reloading.
+[2025-03-25 16:43:25] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 16:43:42] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/settings.py changed, reloading.
+[2025-03-25 16:43:43] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 16:44:46] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 16:45:33] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/settings.py changed, reloading.
+[2025-03-25 16:45:33] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 16:45:37] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/settings.py changed, reloading.
+[2025-03-25 16:45:38] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 16:45:39] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/settings.py changed, reloading.
+[2025-03-25 16:45:40] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 16:45:42] [INFO] [django.utils.autoreload] /home/vidal/Programas/lojex/core/settings.py changed, reloading.
+[2025-03-25 16:45:43] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-03-25 16:45:47] [WARNING] [django.request] Not Found: /
+[2025-03-25 16:45:47] [WARNING] [django.server] "GET / HTTP/1.1" 404 5085
+[2025-03-25 16:45:49] [INFO] [django.server] "GET /login/ HTTP/1.1" 200 2857
+[2025-03-25 16:45:50] [INFO] [django.server] "GET /static/assets/libs/jquery/dist/jquery.min.js HTTP/1.1" 200 88151
+[2025-03-25 16:45:51] [INFO] [django.server] "GET /static/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1" 200 80599
+[2025-03-25 16:45:52] [INFO] [django.server] "GET /static/assets/images/logos/favicon.png HTTP/1.1" 200 873
+[2025-03-25 16:45:53] [INFO] [django.server] "GET /recuperar-senha/ HTTP/1.1" 200 2198
+[2025-03-25 16:45:53] [INFO] [django.server] "GET /registrar/ HTTP/1.1" 200 3371

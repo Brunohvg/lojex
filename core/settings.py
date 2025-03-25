@@ -54,6 +54,7 @@ INSTALLED_APPS = [
 
     # Apps personalizados
     'apps.api_rest',
+    'apps.lojas',
     'apps.motoboys',
     'apps.notificacoes',
     'apps.pedidos',
