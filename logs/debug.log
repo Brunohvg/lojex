@@ -739,3 +739,122 @@ AttributeError: 'Usuario' object has no attribute 'has_module_perms'
 [2025-03-26 00:13:58] [INFO] [django.server] "GET / HTTP/1.1" 200 39194
 [2025-03-26 00:13:58] [WARNING] [django.request] Not Found: /assets/images/profile/user-1.jpg
 [2025-03-26 00:13:58] [WARNING] [django.server] "GET /assets/images/profile/user-1.jpg HTTP/1.1" 404 5707
+[2025-03-26 00:15:46] [INFO] [django.server] "GET / HTTP/1.1" 200 39169
+[2025-03-26 00:15:46] [WARNING] [django.request] Not Found: /assets/images/profile/user-1.jpg
+[2025-03-26 00:15:46] [WARNING] [django.server] "GET /assets/images/profile/user-1.jpg HTTP/1.1" 404 5707
+[2025-03-26 00:15:49] [INFO] [django.server] "GET / HTTP/1.1" 200 39169
+[2025-03-26 00:15:49] [WARNING] [django.request] Not Found: /assets/images/profile/user-1.jpg
+[2025-03-26 00:15:49] [WARNING] [django.server] "GET /assets/images/profile/user-1.jpg HTTP/1.1" 404 5707
+[2025-03-26 00:16:25] [INFO] [django.server] "GET / HTTP/1.1" 200 39142
+[2025-03-26 00:16:25] [WARNING] [django.request] Not Found: /assets/images/profile/user-1.jpg
+[2025-03-26 00:16:25] [WARNING] [django.server] "GET /assets/images/profile/user-1.jpg HTTP/1.1" 404 5707
+[2025-03-26 00:17:03] [INFO] [django.server] "GET / HTTP/1.1" 200 39151
+[2025-03-26 00:17:03] [INFO] [django.server] "GET /static/assets/css/styles.min.css HTTP/1.1" 304 0
+[2025-03-26 00:17:04] [WARNING] [django.request] Not Found: /assets/images/profile/user-1.jpg
+[2025-03-26 00:17:04] [WARNING] [django.server] "GET /assets/images/profile/user-1.jpg HTTP/1.1" 404 5707
+[2025-03-26 00:17:05] [INFO] [django.server] "GET /static/assets/css/icons/tabler-icons/fonts/tabler-icons.woff HTTP/1.1" 200 775616
+[2025-03-26 00:18:33] [INFO] [django.server] "GET / HTTP/1.1" 200 39162
+[2025-03-26 00:18:34] [WARNING] [django.request] Not Found: /assets/images/profile/user-1.jpg
+[2025-03-26 00:18:34] [WARNING] [django.server] "GET /assets/images/profile/user-1.jpg HTTP/1.1" 404 5707
+[2025-03-26 00:19:08] [ERROR] [django.request] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vidal/programas_python/lojex/apps/dashboard/views.py", line 5, in dashboard
+    return render(request, 'dashboard/base.html')
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 199, in render
+    template = context.template.engine.select_template(template_name)
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/template/engine.py", line 208, in select_template
+    return self.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/template/base.py", line 489, in parse
+    raise self.error(token, e)
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/template/base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/template/base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/vidal/programas_python/lojex/.venv/lib/python3.13/site-packages/django/template/base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '{{ usuario_loja.loja.endereco' from '{{ usuario_loja.loja.endereco'
+[2025-03-26 00:19:08] [ERROR] [django.server] "GET / HTTP/1.1" 500 234778
+[2025-03-26 00:19:22] [INFO] [django.server] "GET / HTTP/1.1" 200 39151
+[2025-03-26 00:19:22] [WARNING] [django.request] Not Found: /assets/images/profile/user-1.jpg
+[2025-03-26 00:19:22] [WARNING] [django.server] "GET /assets/images/profile/user-1.jpg HTTP/1.1" 404 5707
+[2025-03-26 00:20:00] [INFO] [django.server] "GET / HTTP/1.1" 200 39159
+[2025-03-26 00:20:01] [WARNING] [django.request] Not Found: /assets/images/profile/user-1.jpg
+[2025-03-26 00:20:01] [WARNING] [django.server] "GET /assets/images/profile/user-1.jpg HTTP/1.1" 404 5707
+[2025-03-26 00:20:31] [INFO] [django.server] "GET / HTTP/1.1" 200 39179
+[2025-03-26 00:20:32] [WARNING] [django.request] Not Found: /assets/images/profile/user-1.jpg
+[2025-03-26 00:20:32] [WARNING] [django.server] "GET /assets/images/profile/user-1.jpg HTTP/1.1" 404 5707
