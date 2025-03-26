@@ -15,16 +15,19 @@ class UsuarioIn(Schema):
     @field_validator("nome", "email", mode="before")
     @classmethod
     def validar_str(cls, v):
-        if not isinstance(v, str):
+        if v is not None and not isinstance(v, str):
             raise ValueError("O campo deve ser uma string")
-        return v.strip()
+        return v.strip() if v else v
 
     @field_validator("senha", mode="before")
     @classmethod
     def validar_senha(cls, v):
-        if v is not None and not isinstance(v, str):
-            raise ValueError("A senha deve ser uma string")
-        return v
+        if v is not None:
+            if isinstance(v, SecretStr):
+                v = v.get_secret_value()  # Obtendo a string real
+            if not isinstance(v, str):
+                raise ValueError("A senha deve ser uma string")
+        return SecretStr(v) if v else v
 
 
 class UsuarioOut(Schema):
@@ -38,6 +41,31 @@ class UsuarioOut(Schema):
     is_superuser: bool
 
     model_config = ConfigDict(from_attributes=True)  # Substitui orm_mode
+
+
+class UsuarioLojaIn(Schema):
+    """
+    Schema para entrada de dados ao criar ou atualizar um usuário em uma loja.
+    """
+    usuario_id: int
+    loja_id: int
+    cargo: str
+
+    @field_validator("cargo", mode="before")
+    @classmethod
+    def validar_str(cls, v):
+        if v is not None and not isinstance(v, str):
+            raise ValueError("O campo deve ser uma string")
+        return v.strip() if v else v
+
+
+class UsuarioLojaOut(Schema):
+    usuario_id: int
+    loja_id: int
+    cargo: str
+
+    model_config = ConfigDict(from_attributes=True)  # Substitui orm_mode
+
 
 class ErrorResponse(Schema):
     detail: str

@@ -10,7 +10,7 @@ from .forms import RegistroUsuarioForm, LoginForm, EsqueciSenhaForm, NovaSenhaFo
 from .models import Usuario
 
 # Configuração do logger específico para o app 'usuarios'
-logger = logging.getLogger('usuarios')
+logger = logging.getLogger(None)
 
 
 def login_user(request):
@@ -31,7 +31,7 @@ def login_user(request):
             if usuario is not None:
                 login(request, usuario)
                 logger.info(f"Usuário {email} logado com sucesso.")
-                return redirect("pagina_inicial")  # Atualize para a página inicial correta
+                return redirect("dashboard:index")  # Inclua o namespace antes do nome da view
             else:
                 logger.warning(f"Tentativa de login falha para {email}. Credenciais incorretas.")
                 form.add_error("email", "Email ou senha incorretos.")
@@ -204,3 +204,9 @@ def redefinir_senha(request, uidb64, token):
         form = NovaSenhaForm()
     
     return render(request, 'usuarios/base.html', {'form': form})
+
+
+def config_conta(request):
+    user = request.user
+    print(user)
+    return render(request, 'dashboard/base.html')

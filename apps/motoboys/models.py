@@ -5,6 +5,7 @@ from apps.lojas.models import Loja
 from django.core.exceptions import ValidationError
 
 def validate_telefone(value):
+    """ Valida o telefone para garantir que tenha 11 dígitos. """
     if not re.match(r'^\d{11}$', value):
         raise ValidationError("O número de telefone deve ter 11 dígitos.")
 
@@ -26,4 +27,3 @@ class Motoboy(models.Model):
         verbose_name = 'Motoboy'
         verbose_name_plural = 'Motoboys'
         ordering = ['nome']
-

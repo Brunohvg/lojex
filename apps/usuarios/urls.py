@@ -40,4 +40,5 @@ urlpatterns = [
     
     # Rota para redefinir a senha via link enviado por email
     path('resetar-senha/<uidb64>/<token>/', views.redefinir_senha, name='resetar_senha'),
+    path('perfil/', views.config_conta, name='config_conta')
 ]

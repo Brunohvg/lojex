@@ -9,7 +9,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     
     # Rota principal que direciona para as URLs do app 'usuarios'
-    path('', include('apps.usuarios.urls')),  # Aqui você inclui as rotas do app 'usuarios'
+    path('', include('apps.usuarios.urls')),
+
+    # Rota principal que direciona para as URLs do app 'dashboard
+    path('', include('apps.dashboard.urls')),  # Aqui você inclui as URLs do app dashboard
 
     # Inclui as rotas da API Ninja
     path('api/', api.urls),  # Rota principal da API

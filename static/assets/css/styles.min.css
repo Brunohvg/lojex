@@ -18361,3 +18361,9 @@ ul {
   width: 100%;
   line-height: 20px;
 }
+
+
+.user-profile-tab .nav-item .nav-link.active {
+  color: var(--bs-primary);
+  border-bottom: 2px solid var(--bs-primary);
+}

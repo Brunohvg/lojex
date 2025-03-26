@@ -11,7 +11,9 @@ import os
 from decouple import config
 from pathlib import Path
 import logging  # noqa: F401
-from logging.handlers import RotatingFileHandler, TimedRotatingFileHandler  # noqa: F401
+from logging.handlers import RotatingFileHandler, TimedRotatingFileHandler
+
+from django import apps  # noqa: F401
 
 # =============================================================================
 # Caminhos do Projeto
@@ -59,6 +61,9 @@ INSTALLED_APPS = [
     'apps.notificacoes',
     'apps.pedidos',
     'apps.usuarios',
+    'apps.entregas',
+    'apps.relatorios',
+    'apps.dashboard',
 
     # Apps de terceiros (adicione conforme necessário)
 ]

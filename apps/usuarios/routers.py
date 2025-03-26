@@ -1,9 +1,9 @@
 from ninja import Router
 from typing import List
 from .models import Usuario
-from .schemas import UsuarioIn, UsuarioOut, ErrorResponse
+from .schemas import UsuarioIn, UsuarioOut, ErrorResponse, UsuarioLojaIn, UsuarioLojaOut
 from django.core.exceptions import ObjectDoesNotExist, ValidationError
-from django.core.validators import validate_email
+
 
 router = Router(tags=["Usuarios"])
 
@@ -88,3 +88,27 @@ def deletar_usuario(request, usuario_id: int):
         return 404, ErrorResponse(detail="Usuário não encontrado")
     except Exception as e:
         return 500, ErrorResponse(detail="Erro ao deletar usuário: " + str(e))
+
+
+@router.post("/loja/", response={201: UsuarioLojaOut, 400: ErrorResponse})
+def adicionar_usuario_loja(request, usuario_loja: UsuarioLojaIn):
+    try:
+        usuario = Usuario.objects.get(id=usuario_loja.usuario_id)
+        usuario.lojas.add(usuario_loja.loja_id, through_defaults={"cargo": usuario_loja.cargo})
+        return 201, UsuarioLojaOut.model_validate(usuario_loja)
+    except ObjectDoesNotExist:
+        return 404, ErrorResponse(detail="Usuário ou loja não encontrados")
+    except Exception as e:
+        return 500, ErrorResponse(detail="Erro ao adicionar usuário à loja: " + str(e))
+    
+@router.delete("/loja/", response={204: None, 404: ErrorResponse, 500: ErrorResponse})
+def remover_usuario_loja(request, usuario_loja: UsuarioLojaIn):
+    try:
+        usuario = Usuario.objects.get(id=usuario_loja.usuario_id)
+        usuario.lojas.remove(usuario_loja.loja_id)
+        return 204, None
+    except ObjectDoesNotExist:
+        return 404, ErrorResponse(detail="Usuário ou loja não encontrados")
+    except Exception as e:
+        return 500, ErrorResponse(detail="Erro ao remover usuário da loja: " + str(e))
+
